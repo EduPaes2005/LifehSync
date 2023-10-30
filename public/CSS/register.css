@@ -1,0 +1,284 @@
+/*Estrutura d.corpo*/
+body {
+    color: #FFF;/*Cor d.fonte*/
+    overflow: hidden;/*Esconde barra d.rolagem*/
+    min-height: 100vh;/*Mínimo d.altura relativo ao espaço d.página*/
+    font-family: "Feather Bold";/*Estilo d.fonte*/
+    background-size: cover;/*Preenche plano d.fundo*/
+    background-image: url(../assets/Background\ -\ Register.svg);/*Imagem-Plano d.fundo*/
+    background-position: center;/*Centro&reposiciona o topo d.imagem d.fundo*/
+}
+/*Cabeçalho*/
+header {
+    display: flex;/*Tela adaptável*/
+    box-shadow: 0px 2px 15px #000;/*Sombra d.objeto*/
+    align-items: center;/*Alinha itens ao centro*/
+    flex-direction: column;/*Direção adaptável d.elementos em coluna*/
+    background-color: #131E22;/*Cor-Plano d.fundo*/
+}
+/*Título-Cabeçalho*/
+header h1 {
+    margin: 4.7px 0;/*Espaço externo entre elementos*/
+    font-size: 23px;/*Tamanho d.fonte*/
+    letter-spacing: 0.46px;/*Espaço entre letras*/
+}
+/*Linha dêgrade*/
+.rainbow-line {
+    width: 100%;/*Largura*/
+    height: 2px;/*Altura - Esta especifíca determina a espessura d.linha dêgrade*/
+    background-image: linear-gradient(90deg, #00B010, #00B010, #0EC6E8, #0050C0, #0050C0, #8C58A3, #8C58A3, #F7421E, #FF0000, #F7421E, #8C58A3, #8C58A3, #0050C0, #0050C0, #0EC6E8,#00B010, #00B010);/*Cores dêgrade d.linha*/
+    background-size: 50% 100%;/*Dimensão d.cada cor dêgrade*/
+    animation: rainbow 3s linear infinite;/*Nome d.animação, duração, modo e repetição*/
+}
+/*Animação-Linha dêgrade*/
+@keyframes rainbow {/*Controla movimento d.dêgrade*/
+    0% {
+        background-position: 0 0;/*Posição inicial d.animação*/
+    }
+    100% {
+        background-position: 100% 0;/*Posição final d.animação*/
+    }
+}
+/*Recipiente-Formulário*/
+#register-container {
+    margin: 36.9px 0 0 78.8px;/*Margem d.topo, direita, abaixo, esquerda*/
+}
+/*Título-Formulário*/
+#form-register h2 {
+    width: 172.95px;
+    margin: 0 0 21px 0;
+    font-size: 24.1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);/*Deslocamento sombra d.texto, borrado, cor e transparência*/
+    letter-spacing: 0.482px;
+}
+/*Rótulos*/
+label {
+    margin: 0 0 0 15px;
+    font-size: 16.7px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);
+}
+/*Especificidades-Campo d.preenchimento*/
+input {
+    border: 1px solid #E7E6E6;/*Espessura d.Borda, tipo e cor*/
+    padding: 0 0 0 23px;/*Espaçamento interno entre elementos*/
+    box-sizing: border-box;/*Tamanho total d.elemento, considerando especificidades*/
+    background: #42BDD4;/*Plano d.fundo*/
+    box-shadow: 3px 5px 9px 0 rgba(0, 0, 0, 0.45);/*Sombra d.elemento*/
+    border-radius: 18px;/*Circunferência d.borda*/
+}
+/*Texto-Campo d.preenchimento*/
+input::placeholder {
+    color: #404040;
+    font-size: 14.7px;
+    font-family: Georgia;
+}
+/*Recipiente-Nome&Email*/
+.name-field, .email-field {
+    width: 581px;
+    height: 57px;
+    padding: 2px 0 0 0;
+}
+/*Nome&Email-Campo d.preenchimento*/
+input[type="text"], input[type="email"] {
+    width: 581px;
+    height: 36px;
+}
+/*Recipiente-Senha&ConfSenha*/
+.pass-field, .confpass-field {
+    width: 263px;
+    height: 52px;
+    padding: 9px 0 0 0;
+}
+/*Especificidade-ConfSenha*/
+.confpass-field {
+    margin: -54px 0px 0px 276.3px;
+    padding: 2px 0 0 0;
+}
+/*Senha&ConfSenha-Campo d.preenchimento*/
+input[type="password"] {
+    width: 263px;
+    height: 32px;
+    background-color: #FF668B;
+}
+/*Recipiente-Modalidade*/
+.modality-field {
+    width: 131px;
+    height: 57px;
+    padding: 18px 0 0 0;
+}
+/*Modadalidade-Campo d.seleção*/
+.modality-field select {
+    width: 131px;
+    border: 1px solid #E7E6E6;
+    height: 36px;
+    background: #FFFFB3;
+    box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.45);
+    box-sizing: border-box;
+    padding: 0 0 0 25px;
+    border-radius: 15px;
+}
+/*Engrenagens*/
+#object-1, #object-3, #object-5 {
+    position: absolute;
+    animation: rotate-horario 25s linear infinite;
+}
+#object-2, #object-4 {
+    position: absolute;
+    animation: rotate-antihorario 25s linear infinite;
+}
+/*Posições*/
+#object-1 {
+    inset: 327px 0 0 1183.9px;
+}
+#object-2 {
+    inset: 318px 0 0 1177.1px;
+}
+#object-3 {
+    inset: 51.3px 0 0 738.3px;
+}
+#object-4 {
+    inset: 208.3px 0 0 820.3px;
+}
+#object-5 {
+    inset: 229.7px 0 0 738.3px;
+}
+/*Animação-Engrenagens*/
+@keyframes rotate-horario {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+@keyframes rotate-antihorario {
+0% {
+    transform: rotate(360deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+/*Linha d.esquerda-OU*/
+.lnormal-line {
+    width: 101.8px;
+    height: 2px;
+    margin: 85px 0 0 144px;
+    background-color: #FFF;
+}
+/*OU*/
+#or {
+    font-size: 13.4px;
+    margin: -8.4px 0 0 260px;
+}
+/*Linha d.direita-OU*/
+.rnormal-line {
+    width: 101.8px;
+    height: 2px;
+    margin: -10px 0 38px 296px;
+    background-color: #FFF;
+}
+/*Google&Facebook&Twitter-Botão*/
+#google, #facebook, #twitter {
+    width: 122px;
+    border: 2px solid #7F7F7F;;
+    height: 39px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+/*Google-Botão*/
+#google {
+    margin: 0 0 0 76px;
+    background: #9DC3E6;
+    background-image: url(../assets/Google-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*Facebook-Botão*/
+#facebook {
+    margin: 0 0 0 5px;
+    background: #FFFFB3;
+    background-image: url(../assets/Facebook-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*Twitter-Botão*/
+#twitter {
+    margin: 46.1px 0 0 5px;
+    background: #FFA5BB;
+    background-image: url(../assets/Twitter-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*Recipiente-Retângulo*/
+#rectangle-container {
+    width: 345px;
+    height: 458px;
+    margin: -451.3px 0 0 866px;
+    border: 0.1px solid rgba(38, 37, 60, 0.65);
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    flex-direction: column;
+    background-color: rgba(13, 13, 13, 0.55);
+}
+/*Slogan*/
+#img-slogan {
+    margin: 21.5px 0 9px 3px;
+}
+/*Botão*/
+#btn-register {
+    margin: 10.6px 0 0 0;
+    width: 269px;
+    height: 43px;
+    background: linear-gradient(0deg, #F9CF7D 0%, #A21F5B 20.31%, #621B5A 91.67%);
+    box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    /*Texto*/
+    font-family: "Feather Bold";
+    text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
+}
+/*Link*/
+#index-link {
+    color: #FFF;
+    margin: 4px 0 0 0;
+    font-size: 12.9px;
+    text-decoration: none;
+}
+/*Recipiente-Termos d.privacidade*/
+.paragrapho {
+    color: #E7E6E6;
+    margin: 31.9px 0 0 0;
+    font-size: 10px;
+    text-align: center;
+}
+/*Termos d.privacidade1&2*/
+#term-privacy1, #term-privacy2 {
+    width: 325px;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+}
+/*Especificidade-Termos d.privacidade2*/
+#term-privacy2 {
+    margin: 11.1px 0 0 0;
+}
+/*Especificidade sublinhados-Termos d.Privacidade1&2*/
+span {
+    text-decoration: underline;
+    color: #0563C1;
+}
+/*Rodapé*/
+footer {
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    background-color: #131E22;
+}
+/*Texto-Rodapé*/
+footer #copyright {
+    margin: 1.8px;
+    font-size: 15px;
+    text-align: center;
+    font-family: Calibri;
+}
