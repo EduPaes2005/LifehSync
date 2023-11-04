@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['username']) || $_SESSION['levelAccess'] != 0){
+if(!isset($_SESSION['username']) || $_SESSION['levelAccess'] != 1){
     header("Location: ../public/index.php");
     exit();
 }
@@ -71,7 +71,7 @@ $firstAccessCompleted = !empty($userData['modality']);
 
     <!--Cabeçalho-->
     <header>
-        <!-- <p>Olá! <//?php echo $username; ?></p> Saudações-Cabeçalho -->
+        <p>Olá! Você é um ADM: <?php echo $username; ?></p> <!-- Saudações-Cabeçalho -->
         <div class="buttons">
             <button id="homeButton"></button>
             <button id="fireButton"></button>
