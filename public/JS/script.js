@@ -298,7 +298,7 @@ notebookButton.addEventListener('click', () => {
     if (isTool6Minimized) {
         // Maximizar a ferramenta
         tool6.style.width = '300px';
-        tool6.style.height = '200px';
+        tool6.style.height = '547px';
         tool6.style.border = '1px solid #CCC';
         isTool6Minimized = false;
         // Adicionar a classe de animação ao botão

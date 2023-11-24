@@ -1,7 +1,7 @@
 <?php
-include('../database/conexao.php');
+include('../database/connection.php');
 
-$db = new Conexao();
+$db = new Connection();
 
 class Accounts{
     private $conn;

@@ -2,9 +2,9 @@
 session_start();
 
 require_once('../action/Accounts.php');
-require_once('../database/conexao.php');
+require_once('../database/connection.php');
 
-$database = new Conexao();
+$database = new Connection();
 $db = $database->getConnection();
 $accounts = new Accounts($db);
 
@@ -40,10 +40,7 @@ if(isset($_POST['login'])){
 <body>
 
 <!--Cabeçalho-->
-<header> 
-    <h1>LifehSync</h1> <!--Título-Cabeçalho-->
-    <div class="rainbow-line"></div>
-</header>
+<?php include '../view/components/header.php'; ?>
 
 <!--Principal-->
 <main>
@@ -91,10 +88,7 @@ if(isset($_POST['login'])){
 </main>
 
 <!--Rodapé-->
-<footer>
-    <div class="rainbow-line"></div>
-    <p id="copyright">&copy; 2023 - Direitos Reservados</p>
-</footer>
+<?php include '../view/components/footer.php'; ?>
 
 </body>
 </html> <!--Fim d.página-->

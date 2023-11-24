@@ -1,8 +1,8 @@
 <?php
     require_once('../action/Accounts.php');
-    require_once('../database/conexao.php');
+    require_once('../database/connection.php');
 
-    $database = new Conexao();
+    $database = new Connection();
     $db = $database->getConnection();
     $accounts = new Accounts($db);
 
@@ -37,11 +37,8 @@
 <!--Corpo-->
 <body>
 
-    <!--Cabeçalho-->
-    <header> 
-        <h1>LifehSync</h1> <!--Título-Cabeçalho-->
-        <div class="rainbow-line"></div>
-    </header>
+<!--Cabeçalho-->
+<?php include 'components/header.php'; ?>
 
 <!--Principal-->
 <main>
@@ -100,10 +97,7 @@
 </main>
 
     <!--Rodapé-->
-    <footer>
-        <div class="rainbow-line"></div>
-        <p id="copyright">&copy; 2023 - Direitos Reservados</p>
-    </footer>
+    <?php include 'components/footer.php'; ?>
 
 </body>
 </html> <!--Fim d.página-->

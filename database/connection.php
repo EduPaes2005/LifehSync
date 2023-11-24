@@ -1,6 +1,6 @@
 <?php //Documento PHP
 
-class Conexao{ //Entidade q.possui atributos, funções e métodos q.geram uma estrutura lógica funcional
+class Connection{ //Entidade q.possui atributos, funções e métodos q.geram uma estrutura lógica funcional
     private $host = "localhost"; //Atributo/Característica d.classe, d.tipo privada q.retêm uma váriavel c,nome d.'host' e recebe como resposta: "localhost"
     private $user = "root";
     private $password = "";
@@ -14,7 +14,7 @@ class Conexao{ //Entidade q.possui atributos, funções e métodos q.geram uma e
             $this->conn = new PDO("mysql:host=". $this->host. ";dbname=". $this->database, $this->user, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e){ //Trás uma resposta ao procedimento
-            echo "Erro na conexao: ". $e->getMessage();
+            echo "Erro na conexão: ". $e->getMessage();
         }
 
         return $this->conn; //Retorna resposta da váriavel conn dentro dos procedimentos anteriores

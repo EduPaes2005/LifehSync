@@ -1,16 +1,20 @@
 <?php
 session_start();
 
+require_once('../action/NotebookCrud.php');
+require_once('../database/connection.php');
+
+$database = new Connection();
+$db = $database->getConnection();
+$crud = new Crud($db);
+
 if(!isset($_SESSION['username']) || $_SESSION['levelAccess'] != 0){
     header("Location: ../public/index.php");
     exit();
 }
 
-require_once('../database/conexao.php');
-
 $username = $_SESSION['username'];
-
-$database = new Conexao();
+$database = new Connection();
 $conn = $database->getConnection();
 
 // Verificar se as informações do primeiro acesso já foram fornecidas
@@ -23,6 +27,46 @@ $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $firstAccessCompleted = !empty($userData['modality']);
 
+if(isset($_GET['action'])){
+    switch($_GET['action']){
+        case 'create':
+            $crud->create($_POST);
+            $rows = $crud->read();
+        break;
+
+        case 'read':
+            $rows = $crud->read();
+        break;
+
+        case 'update':
+            if(isset($_POST['id_notebook'])){
+                $crud->update($_POST);
+            }
+            $rows = $crud->read();
+        break;
+
+        case 'delete':
+            $crud->delete($_GET['id_notebook']);
+            $rows = $crud->read();
+        break;
+
+        default:
+            $rows = $crud->read();
+        break;
+    }
+}else{
+        $rows = $crud->read();
+}
+
+$notebooks = [];
+$query = "SELECT * FROM notebooks";
+$result = $db->query($query);
+
+if ($result->rowCount() > 0){
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)){
+        $notebooks[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html> <!-- Documento HTML -->
@@ -32,6 +76,8 @@ $firstAccessCompleted = !empty($userData['modality']);
     <meta charset="UTF-8"> <!-- Caractéres Especiais -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Proporção d.Tela -->
     <script type="text/javascript" src="https://db.onlinewebfonts.com/s/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold"></script> <!--Importando fontes-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Linguagem jQuery -->
+    <script src="../public/JS/Notebook.js"></script>
     <link rel="stylesheet" href="../public/CSS/normalize.css"> <!-- Importando Arquivo d.Estilização -->
     <link rel="stylesheet" href="../public/CSS/dashboard.css">
     <link rel="icon" href="../public/assets/LogoDesktop.svg" type="image/svg" media="(min-width: 769px)"> <!--Logo-Guia d.navegação-Desktop-->
@@ -56,7 +102,7 @@ $firstAccessCompleted = !empty($userData['modality']);
         controls=0 - Desativa controles d.Player
         disablekb=1 - Desativa controles d.Teclado d.Player
         modestbranding=1 - Desativa logo d.Youtube
-        fs=0 - Desativa o botão d.Player de tela cheia d.Player
+        fs=0 - Desativa o botão d.Player d.Tela cheia d.Player
         cc_load_policy=0 - Desativa legendas
         iv_load_policy=3 - Desativa anotações d.Vídeo
         showinfo=0 - Desativa infos,d.Tela
@@ -70,50 +116,10 @@ $firstAccessCompleted = !empty($userData['modality']);
     <!-- p1FCSP7DREk - Penhasco2 !Alert PC! -->
 
     <!--Cabeçalho-->
-    <header>
-        <!-- <p>Olá! <//?php echo $username; ?></p> Saudações-Cabeçalho -->
-        <div class="buttons">
-            <button id="homeButton"></button>
-            <button id="fireButton"></button>
-            <button id="fullscreenButton"></button>
-            <button id="shareButton"></button>
-            <button id="muteButton"></button>
-            <div class="container">
-                <button class="toggle-button" id="settingsButton"></button>
-                <div class="ferramentabar">
-                    <!-- Ferramentas aqui -->
-                    1<br>
-                    2<br>
-                    3<br>
-                </div>
-            </div>
-        </div>
-        <h1>LifehSync</h1> <!--Título-Cabeçalho-->
-        <div class="rainbow-line"></div>
-    </header>
+    <?php include 'components/header-main.php'; ?>
 
-    <?php if (!$firstAccessCompleted): ?>
-        <!-- Mostrar o formulário apenas se o primeiro acesso ainda não foi completado -->
-            <div class="first-access-form">
-                <h3>Informe seu intuito de uso:</h3>
-                <form id="first-access-form" method="POST" action="save_first_access.php">
-
-                    <div class="modality-field">
-                        <label for="modality">Modalidade</label>
-                        <select name="modality" required> <!--Campo d.seleção-->
-                            <option value="" disabled selected>Selecione...</option> <!--Opção desativada, apenas info-->
-                            <option value="Trabalho">Trabalho</option> <!--Opções disponíveis-->
-                            <option value="Leitura">Leitura</option>
-                            <option value="Estudo">Estudo</option>
-                            <option value="Outros...">Outros...</option>
-                        </select>
-                    </div>
-                    <!-- Adicione mais campos conforme necessário -->
-
-                    <button type="submit" name="submit">Enviar</button>
-                </form>
-            </div>
-    <?php endif; ?>
+    <!--Formulário d.1º Acesso-->
+    <?php include 'components/firstAccess.php'; ?>
 
     <div class="toolbar">
         <button class="toolbar-item" id="lo-fi"></button>
@@ -126,53 +132,42 @@ $firstAccessCompleted = !empty($userData['modality']);
     </div>
 
     <div class="workspace">
-
-        <!-- Elementos do workspace aqui -->
         <div class="tool" id="tool1">
             <div class="tool-content">
-                <!-- Tool Content 1 -->
+                <!--Tool Content 1-->
             </div>
         </div>
         <div class="tool" id="tool2">
             <div class="tool-content">
-                <!-- Tool Content 2 -->
+                <!--Tool Content 2-->
             </div>
         </div>
         <div class="tool" id="tool3">
             <div class="tool-content">
-                <!-- Tool Content 3 -->
+                <!--Tool Content 3-->
             </div>
         </div>
-        <!-- Pomodoro - Ferramenta -->
+        <!--Pomodoro-->
         <div class="tool" id="tool4">
-            <div class="tool-content"><!-- Old.Element class -->
-                <div id="timer">
-                    <span id="minutes">25</span>:<span id="seconds">00</span>
-                </div>
-
-                <button id="start">Iniciar</button>
-                <button id="pause">Pausar</button>    
-                <button id="reset">Redefinir</button>
-            </div>
+            <?php include 'components/tools/pomodoro.php'; ?>
         </div>
         <div class="tool" id="tool5">
             <div class="tool-content">
-                <!-- Tool Content 5 -->
+                <!--Tool Content 5-->
             </div>
         </div>
+        <!--Cadernos-->
         <div class="tool" id="tool6">
-            <div class="tool-content">
-                <!-- Tool Content 6 -->
-            </div>
+            <?php include 'components/tools/notebook.php'; ?>
         </div>
         <div class="tool" id="tool7">
             <div class="tool-content">
-                <!-- Tool Content 7 -->
+                <!--Tool Content 7-->
             </div>
         </div>
     </div>
 
-    <!-- <a href="logout.php">Deslogar</a> Link-Rodapé -->
+    <!--<a href="logout.php">Deslogar</a> Link-Rodapé-->
 
     <div class="perfil">
         <div class="rainbow-border"></div>

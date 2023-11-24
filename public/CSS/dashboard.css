@@ -1,6 +1,7 @@
 /*Estrutura d.corpo*/
 body {
     color: #FFF;/*Cor d.fonte*/
+    /* cursor: url(../assets/Cursor.svg), auto; - Cursor Personalizado*/
     overflow: hidden;/*Esconde barra d.rolagem*/
     font-family: "Feather Bold";/*Estilo d.fonte*/
     /*font-family: Feather;-Sem net-Manter em cache na locahost by Users*/
@@ -384,7 +385,300 @@ button#reset {
 
 /*Cadernos - Ferramenta*/
 #tool6 {
-    /*...*/
+    cursor: move;
+}
+
+#tool6 .tool-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#tool6 .header {
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool6 h1 {
+    margin: 1px 145px 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool6 #back {
+    color: #FFF;
+    width: 45.833px;
+    height: 27.7px;
+    margin: 1px 0 0 0;
+    border: 1.4px solid #515151;
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    background-color: transparent;
+}
+
+#tool6 #minimize-icon {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool6 hr {
+    width: 9px;
+    border: 1.5px solid #FFF;
+}
+
+/* Estilos para o corpo do conteúdo */
+#tool6 ::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: transparent;
+}
+
+#tool6 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #FFF;
+}
+
+/* Estilos específicos para AddNotebook */
+#tool6 #addNotebook .header h1 {
+    margin: 1px 156px 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool6 form#form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    justify-content: center;
+}
+
+#tool6 h2 {
+    color: #FFF;
+    inset: -73.5px 0 0 0;
+    height: fit-content;
+    margin: 0;
+    position: relative;
+    font-size: 17px;
+    text-align: center;
+    font-family: Feather;
+    letter-spacing: 0.34px;
+}
+
+#tool6 label {
+    margin: 25.1px 0 3.86px 6px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    text-shadow: none;
+    letter-spacing: 0.22px;
+}
+
+#tool6 input#title {
+    margin: 0 0 -3px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#tool6 input#title::placeholder {
+    color: #4C5053;
+    padding: 0 0 0 13px;
+    font-size: 9.9px;
+    font-weight: 500;
+    letter-spacing: 0.18px;
+}
+
+#tool6 .inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 28px 0;
+}
+
+#tool6 select#cor {
+    color: #4C5053;
+    width: 134.6px;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    font-size: 9.7px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    background-color: #D9D9D9;
+}
+
+#tool6 .containerFileInput {
+    height: 28.7px;
+}
+
+#tool6 .labelFileInput {
+    color: #4C5053;
+    border: 1.5px solid #515151;
+    cursor: pointer;
+    padding: 7.7px 30.7px;
+    font-size: 9.7px;
+    font-family: Arial;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#tool6 input#cover {
+    top: -39px;
+    left: 1px;
+    width: 134.6px;
+    height: 26.04px;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+    font-size: 0;
+    border-radius: 7px;
+}
+
+#tool6 button#btn {
+    inset: 2.35px 0 0 0;
+    position: relative;
+}
+
+#tool6 button#btn {
+    color: #4C5053;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.3px;
+    background-color: #FFF;
+}
+
+/* Estilos específicos para Notebook */
+#tool6 #Notebook .body {
+    overflow: auto;
+    padding: 17px 11.5px 9px 17px;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 441px;
+    margin: 2px 2px 0 2px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#tool6 #Notebook .body a {
+    width: 115px;
+    height: 167.63px;
+    cursor: pointer;
+    border: 0;
+    margin-bottom: 20px;
+    border-radius: 17px;
+    background-size: cover;
+    background-color: #FFF;
+}
+
+#tool6 #create {
+    color: #FFF;
+    width: 45.833px;
+    height: 27.7px;
+    margin: 1px 0 0 0;
+    border: 1.4px solid #515151;
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    background-color: transparent;
+}
+
+#tool6 #notebook1 {
+    background-image: url(../assets/Livro1.svg);
+}
+#tool6 #notebook2 {
+    background-image: url(../assets/Livro2.svg);
+}
+#tool6 #notebook3 {
+    background-image: url(../assets/Livro3.svg);
+}
+#tool6 #notebook4 {
+    background-image: url(../assets/Livro4.svg);
+}
+#tool6 #notebook5 {
+    background-image: url(../assets/Livro5.svg);
+}
+#tool6 #notebook6 {
+    background-image: url(../assets/Livro6.svg);
+}
+#tool6 #notebook7 {
+    background-image: url(../assets/Livro7.svg);
+}
+#tool6 #notebook8 {
+    background-image: url(../assets/Livro8.svg);
+}
+#tool6 #notebook9 {
+    background-image: url(../assets/Livro9.svg);
+}
+#tool6 #notebook10 {
+    background-image: url(../assets/Livro10.svg);
+}
+#tool6 #notebook11 {
+    background-image: url(../assets/Livro11.svg);
+}
+#tool6 #notebook12 {
+    background-image: url(../assets/Livro12.svg);
+}
+
+/* Estilos específicos para NotebookSubject */
+#tool6 #notebookSubject .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#tool6 textarea {
+    color: #FFF;
+    width: 253px;
+    height: 421px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    line-height: 1.3;
+    font-family: FANGSONG;
+}
+
+/* Estilos para o rodapé comum */
+#tool6 .footer {
+    height: 26.814px;
+    border-top: 1.4px solid #FFF;
+    padding: 4px;
+    text-align: center;
+}
+
+#tool6 p#feedback {
+    margin: 5.97px 0 0 10px;
+    display: flex;
+    font-size: 11.65px;
+    font-weight: bold;
+    align-items: center;
+    font-family: Arial;
+    justify-content: flex-start;
+}
+
+#tool6 span {
+    margin-left: 5px;
 }
 
 /*Notas - Ferramenta*/

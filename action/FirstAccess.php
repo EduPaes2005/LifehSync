@@ -6,14 +6,14 @@ if(!isset($_SESSION['username'])){
     exit();
 }
 
-require_once('../database/conexao.php');
+require_once('../database/connection.php');
 
 if(isset($_POST['submit'])){
     $modality = $_POST['modality'];
 
     $username = $_SESSION['username'];
 
-    $database = new Conexao();
+    $database = new Connection();
     $conn = $database->getConnection();
 
     $sql = "UPDATE users SET modality = :modality WHERE username = :username";
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     $stmt->bindValue(':username', $username);
 
     if($stmt->execute()){
-        header("Location: dashboard.php"); // Redirecione de volta para o dashboard após salvar os dados
+        header("Location: ../view/dashboard.php"); // Redirecione de volta para o dashboard após salvar os dados
         exit();
     } else {
         echo "Erro ao salvar os dados. Por favor, tente novamente.";
