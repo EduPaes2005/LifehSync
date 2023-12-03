@@ -11,7 +11,6 @@ class Crud{
         $this->conn = $db;
     }
 
-//Função para criar os registros
     public function create($postValue){
         $title = $postValue['title'];
 
@@ -44,7 +43,6 @@ class Crud{
         }
     }
 
-//Função para ler os registros
     public function read(){
         $query = "SELECT * FROM " . $this->table_name;
         $stmt = $this->conn->prepare($query);
@@ -52,7 +50,6 @@ class Crud{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-//Função para pegar os registros do banco e inserir no formulário
     public function readOne($id_notebook){
         $query = "SELECT * FROM " . $this->table_name . " WHERE id_notebook = ?";
         $stmt = $this->conn->prepare($query);
@@ -61,11 +58,10 @@ class Crud{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-//Função para atualizar os registros
-    public function update($postValues){
-        $id_notebook = $postValues['id_notebook'];
-        $title = $postValues['title'];
-        $cover = $postValues['cover'];
+    public function update($postValue){
+        $id_notebook = $postValue['id_notebook'];
+        $title = $postValue['title'];
+        $cover = $postValue['cover'];
 
         if(empty($id_notebook) || empty($title) || empty($cover)){
             return false;
@@ -83,7 +79,6 @@ class Crud{
         }
     }
 
-//Função para apagar os registros
     public function delete($id_notebook){
         $query = "DELETE FROM " . $this->table_name . " WHERE id_notebook = ?";
         $stmt = $this->conn->prepare($query);

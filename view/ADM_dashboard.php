@@ -117,8 +117,6 @@ $firstAccessCompleted = !empty($userData['modality']);
         </div>
     </div>
 
-    <!--<a href="logout.php">Deslogar</a>-->
-
     <div class="perfil">
         <div class="rainbow-border"></div>
         <button id="perfil-icon"></button>

@@ -1,5 +1,4 @@
 <?php if (!$firstAccessCompleted): ?>
-    <!-- Mostrar o formulário apenas se o primeiro acesso ainda não foi completado -->
         <div class="first-access-form">
             <h3>Informe seu intuito de uso:</h3>
             <form id="first-access-form" method="POST" action="../action/FirstAccess.php">

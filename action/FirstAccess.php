@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     $stmt->bindValue(':username', $username);
 
     if($stmt->execute()){
-        header("Location: ../view/dashboard.php"); // Redirecione de volta para o dashboard após salvar os dados
+        header("Location: ../view/dashboard.php");
         exit();
     } else {
         echo "Erro ao salvar os dados. Por favor, tente novamente.";

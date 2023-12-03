@@ -35,6 +35,7 @@
 </head>
 
 <body>
+
 <!--Cabeçalho-->
 <?php include 'components/header.php'; ?>
 
@@ -91,6 +92,7 @@
         </div>
     </div>
 </main>
+
 <!--Rodapé-->
 <?php include 'components/footer.php'; ?>
 

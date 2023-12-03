@@ -51,11 +51,9 @@ function fetchNotebooks($db) {
 function fetchNoteContent($db) {
     $noteContent = null;
 
-    // Verifica se um ID de caderno foi passado via GET
     if (isset($_GET['id_notebook'])) {
         $id_notebook = $_GET['id_notebook'];
 
-        // Consulta SQL para buscar informações do caderno pelo ID
         $sql = "SELECT * FROM notebooks WHERE id_notebook = :id_notebook";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id_notebook', $id_notebook);
@@ -73,7 +71,6 @@ function fetchNoteContent($db) {
 }
 
 function handleAjaxRequest($noteContent) {
-    // Se for uma requisição AJAX, retornar os detalhes do caderno como JSON
     if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         header('Content-Type: application/json');
         echo json_encode($noteContent);

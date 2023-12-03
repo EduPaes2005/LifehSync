@@ -22,36 +22,33 @@ if(isset($_POST['login'])){
 }
 ?>
 
-<!DOCTYPE html> <!-- Documento HTML -->
-<html lang="pt-BR"> <!-- Página em Português-BR -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<head> <!--Cabeça-Funções internas-->
-    <meta charset="UTF-8"> <!-- Caractéres Especiais -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Proporção de Tela -->
-    <script type="text/javascript" src="https://db.onlinewebfonts.com/s/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold"></script> <!--Importando fontes-->
-    <link rel="stylesheet" href="CSS/normalize.css"> <!--Importando estilizações-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://db.onlinewebfonts.com/s/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold"></script>
+    <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="icon" href="../public/assets/LogoDesktop.svg" type="image/svg" media="(min-width: 769px)"> <!--Logo-Guia d.navegação-Desktop-->
-    <link rel="icon" href="../public/assets/LogoMobile.svg" type="image/svg" media="(max-width: 768px)"> <!--Logo-Guia d.navegação-Mobile-->
-    <title>LifehSync</title> <!--Título-Guia d.navegação-->
+    <link rel="icon" href="../public/assets/LogoDesktop.svg" type="image/svg" media="(min-width: 769px)">
+    <link rel="icon" href="../public/assets/LogoMobile.svg" type="image/svg" media="(max-width: 768px)">
+    <title>LifehSync</title>
 </head>
 
-<!--Corpo-->
 <body>
 
 <!--Cabeçalho-->
 <?php include '../view/components/header.php'; ?>
 
-<!--Principal-->
 <main>
-
-    <div class="login-container"> <!--Recipiente-Formulário-->
-        <form id="form-login" method="POST"> <!--Formulário-->
-            <h2>Entrar</h2> <!--Título-Formulário-->
+    <div class="login-container">
+        <form id="form-login" method="POST">
+            <h2>Entrar</h2>
 
             <div class="name-field">
-                <label for="username">Nome de usuário</label> <!--Rótulo-Campo d.preenchimento-->
-                <input type="text" name="username" placeholder="Coloque seu nome" required> <!--Campo d.preenchimento-->
+                <label for="username">Nome de usuário</label>
+                <input type="text" name="username" placeholder="Coloque seu nome" required>
             </div>
 
             <div class="pass-field">
@@ -59,10 +56,10 @@ if(isset($_POST['login'])){
                 <input type="password" name="password" placeholder="Coloque sua senha" required>
             </div>
 
-            <button id="btn-register" type="submit" name="login" >LOGAR</button> <!--Botão-->
+            <button id="btn-register" type="submit" name="login" >LOGAR</button>
         </form>
         
-        <a href="../view/register.php" id="register-link">Não tem uma conta? <span>Cadastre-se aqui</span></a> <!--Link-Direciona à pág.Cadastro-->
+        <a href="../view/register.php" id="register-link">Não tem uma conta? <span>Cadastre-se aqui</span></a>
     </div>
 
     <div class="or-container">
@@ -77,12 +74,12 @@ if(isset($_POST['login'])){
         <button id="twitter"></button>
     </div>
 
-    <div class="rectangle-container"> <!--Recipiente-Retangular-->
-        <img id="img-slogan" src="assets/slogan.svg"> <!--Slogan-->
+    <div class="rectangle-container">
+        <img id="img-slogan" src="assets/slogan.svg">
 
-        <div class="paragrapho"> <!--Recipiente-Paragráfo-->
-            <p id="term-privacy1">Ao entrar no LifehSync, você concorda com os nossos <span>Termos</span> e <span>Política de Privacidade</span>.</p> <!--Paragráfo1-->
-            <p id="term-privacy2">Este site é protegido pela reCAPTCHA Enterprise. Aplicam-se a <span>Política de Privacidade</span> e os <span>Termos de Uso</span> do Google.</p> <!--Paragráfo2-->
+        <div class="paragrapho">
+            <p id="term-privacy1">Ao entrar no LifehSync, você concorda com os nossos <span>Termos</span> e <span>Política de Privacidade</span>.</p>
+            <p id="term-privacy2">Este site é protegido pela reCAPTCHA Enterprise. Aplicam-se a <span>Política de Privacidade</span> e os <span>Termos de Uso</span> do Google.</p>
         </div>
     </div>
 </main>
@@ -91,4 +88,4 @@ if(isset($_POST['login'])){
 <?php include '../view/components/footer.php'; ?>
 
 </body>
-</html> <!--Fim d.página-->
+</html>
