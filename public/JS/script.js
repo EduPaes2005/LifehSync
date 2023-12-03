@@ -1,8 +1,8 @@
 const muteButton = document.getElementById('muteButton');
 const video = document.getElementById('youtubeVideo');
-const fullscreenButton = document.querySelector('.buttons button:nth-child(3)');
+const fullscreenButton = document.querySelector('.buttons button:nth-child(4)');
 const tools = document.querySelectorAll('.tool');
-const lo_fiButton = document.getElementById('lo-fi');
+const lo_fiButton = document.getElementById('youtube');
 const tool1 = document.getElementById('tool1');
 const mindfulnessButton = document.getElementById('mindfulness');
 const tool2 = document.getElementById('tool2');
@@ -22,42 +22,33 @@ let isFullscreen = false;
 let isTool1Minimized = true;
 let isTool2Minimized = true;
 let isTool3Minimized = true;
-//Pomodoro - Elemento
 let isTool4Minimized = true;
-//Pomodoro - Função
 let intervalId;
 let timeLeft = 25 * 60;
 let timerRunning = false;
-
 let isTool5Minimized = true;
 let isTool6Minimized = true;
 let isTool7Minimized = true;
 
-    // Função para verificar o estado de visibilidade da página
-    function handleVisibilityChange() {
-        var video = document.getElementById('youtubeVideo');
-
-        // Se a página estiver oculta, pausar o vídeo, caso contrário, continuar tocando
-        if (document.hidden) {
-            video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        } else {
-            video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        }
+function handleVisibilityChange() {
+    var video = document.getElementById('youtubeVideo');
+    if (document.hidden) {
+        video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    } else {
+        video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
     }
+}
 
-    // Adicionar um ouvinte de evento para verificar quando a visibilidade da página muda
-    document.addEventListener('visibilitychange', handleVisibilityChange, false);
+document.addEventListener('visibilitychange', handleVisibilityChange, false);
 
 muteButton.addEventListener('click', () => {
     if (isMuted) {
-        // Desmutar o vídeo
         video.src = video.src.replace('mute=1', 'mute=0');
-        muteButton.style.backgroundImage = 'url(../public/assets/Mute.svg)'; // Altera a imagem de fundo para o botão de mute
+        muteButton.style.backgroundImage = 'url(../public/assets/Mute.svg)';
         isMuted = false;
     } else {
-        // Mutar o vídeo
         video.src = video.src.replace('mute=0', 'mute=1');
-        muteButton.style.backgroundImage = 'url(../public/assets/Unmuted.svg)'; // Altera a imagem de fundo para o botão de desmute
+        muteButton.style.backgroundImage = 'url(../public/assets/Unmuted.svg)';
         isMuted = true;
     }
 });
@@ -91,7 +82,7 @@ fullscreenButton.addEventListener('click', () => {
 document.querySelector('.toggle-button').addEventListener('click', function() {
     var ferramentabar = document.querySelector('.ferramentabar');
     if (ferramentabar.style.height === '' || ferramentabar.style.height === '0px') {
-      ferramentabar.style.height = '70px'; // Define a altura da barra de ferramentas quando visível
+      ferramentabar.style.height = '70px';
     } else {
       ferramentabar.style.height = '0';
     }
@@ -99,17 +90,28 @@ document.querySelector('.toggle-button').addEventListener('click', function() {
 
 tools.forEach(tool => {
     let isDragging = false;
+    let isResizing = false; // Adicionando uma flag para redimensionar, se necessário
     let offsetX, offsetY;
 
     tool.addEventListener('mousedown', e => {
-        e.preventDefault(); // Evita que o evento de toque seja acionado em alguns dispositivos móveis
+        if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea' || e.target.tagName.toLowerCase() === 'select') {
+            // Se o clique foi em um input ou textarea, não inicie o arrastar
+            return;
+        }
+
+        e.preventDefault();
         isDragging = true;
         offsetX = e.clientX - tool.getBoundingClientRect().left;
         offsetY = e.clientY - tool.getBoundingClientRect().top;
     });
 
     tool.addEventListener('touchstart', e => {
-        e.preventDefault(); // Evita o comportamento padrão de toque, como o zoom da página
+        if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea' || e.target.tagName.toLowerCase() === 'select' || e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a') {
+            // Se o toque foi em um input ou textarea, não inicie o arrastar
+            return;
+        }
+
+        e.preventDefault();
         const touch = e.touches[0];
         offsetX = touch.clientX - tool.getBoundingClientRect().left;
         offsetY = touch.clientY - tool.getBoundingClientRect().top;
@@ -117,7 +119,7 @@ tools.forEach(tool => {
     });
 
     document.addEventListener('mousemove', e => {
-        if (!isDragging) return;
+        if (!isDragging && !isResizing) return;
 
         const x = e.clientX - offsetX;
         const y = e.clientY - offsetY;
@@ -127,7 +129,7 @@ tools.forEach(tool => {
     });
 
     document.addEventListener('touchmove', e => {
-        if (!isDragging || e.touches.length !== 1) return;
+        if (!isDragging && !isResizing) return;
 
         const touch = e.touches[0];
         const x = touch.clientX - offsetX;
@@ -139,95 +141,79 @@ tools.forEach(tool => {
 
     document.addEventListener('mouseup', () => {
         isDragging = false;
+        isResizing = false;
     });
 
     document.addEventListener('touchend', () => {
         isDragging = false;
+        isResizing = false;
     });
 });
 
-// Máximiza e Mínimiza
 lo_fiButton.addEventListener('click', () => {
     if (isTool1Minimized) {
-        // Maximizar a ferramenta
         tool1.style.width = '300px';
         tool1.style.height = '200px';
         tool1.style.border = '1px solid #CCC';
         isTool1Minimized = false;
-        // Adicionar a classe de animação ao botão
         lo_fiButton.classList.add('active-button');
     } else {
-        // Minimizar a ferramenta
         tool1.style.width = '0';
         tool1.style.height = '0';
         tool1.style.border = 'none';
         isTool1Minimized = true;
-        // Remover a classe de animação do botão
         lo_fiButton.classList.remove('active-button');
     }
 });
 
 mindfulnessButton.addEventListener('click', () => {
     if (isTool2Minimized) {
-        // Maximizar a ferramenta
         tool2.style.width = '300px';
         tool2.style.height = '200px';
         tool2.style.border = '1px solid #CCC';
         isTool2Minimized = false;
-        // Adicionar a classe de animação ao botão
         mindfulnessButton.classList.add('active-button');
     } else {
-        // Minimizar a ferramenta
         tool2.style.width = '0';
         tool2.style.height = '0';
         tool2.style.border = 'none';
         isTool2Minimized = true;
-        // Remover a classe de animação do botão
         mindfulnessButton.classList.remove('active-button');
     }
 });
 
 calendarButton.addEventListener('click', () => {
     if (isTool3Minimized) {
-        // Maximizar a ferramenta
         tool3.style.width = '300px';
         tool3.style.height = '470px';
         tool3.style.border = '1px solid #CCC';
         isTool3Minimized = false;
-        // Adicionar a classe de animação ao botão
         calendarButton.classList.add('active-button');
     } else {
-        // Minimizar a ferramenta
         tool3.style.width = '0';
         tool3.style.height = '0';
         tool3.style.border = 'none';
         isTool3Minimized = true;
-        // Remover a classe de animação do botão
         calendarButton.classList.remove('active-button');
     }
 });
 
 pomodoroButton.addEventListener('click', () => {
     if (isTool4Minimized) {
-        // Maximizar a ferramenta
         tool4.style.width = '300px';
         tool4.style.height = '200px';
         tool4.style.border = '1px solid #CCC';
         isTool4Minimized = false;
-        // Adicionar a classe de animação ao botão
         pomodoroButton.classList.add('active-button');
     } else {
-        // Minimizar a ferramenta
         tool4.style.width = '0';
         tool4.style.height = '0';
         tool4.style.border = 'none';
         isTool4Minimized = true;
-        // Remover a classe de animação do botão
         pomodoroButton.classList.remove('active-button');
     }
 });
 
-//Função Pomodoro
 function updateTimerDisplay() {
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
@@ -276,60 +262,48 @@ document.getElementById('reset').addEventListener('click', function() {
 
 spotifyButton.addEventListener('click', () => {
     if (isTool5Minimized) {
-        // Maximizar a ferramenta
         tool5.style.width = '300px';
         tool5.style.height = '200px';
         tool5.style.border = '1px solid #CCC';
         isTool5Minimized = false;
-        // Adicionar a classe de animação ao botão
         spotifyButton.classList.add('active-button');
     } else {
-        // Minimizar a ferramenta
         tool5.style.width = '0';
         tool5.style.height = '0';
         tool5.style.border = 'none';
         isTool5Minimized = true;
-        // Remover a classe de animação do botão
         spotifyButton.classList.remove('active-button');
     }
 });
 
 notebookButton.addEventListener('click', () => {
     if (isTool6Minimized) {
-        // Maximizar a ferramenta
         tool6.style.width = '300px';
         tool6.style.height = '547px';
         tool6.style.border = '1px solid #CCC';
         isTool6Minimized = false;
-        // Adicionar a classe de animação ao botão
         notebookButton.classList.add('active-button');
     } else {
-        // Minimizar a ferramenta
         tool6.style.width = '0';
         tool6.style.height = '0';
         tool6.style.border = 'none';
         isTool6Minimized = true;
-        // Remover a classe de animação do botão
         notebookButton.classList.remove('active-button');
     }
 });
 
 taskButton.addEventListener('click', () => {
     if (isTool7Minimized) {
-        // Maximizar a ferramenta
         tool7.style.width = '300px';
         tool7.style.height = '200px';
         tool7.style.border = '1px solid #CCC';
         isTool7Minimized = false;
-        // Adicionar a classe de animação ao botão
         taskButton.classList.add('active-button');
     } else {
-        // Minimizar a ferramenta
         tool7.style.width = '0';
         tool7.style.height = '0';
         tool7.style.border = 'none';
         isTool7Minimized = true;
-        // Remover a classe de animação do botão
         taskButton.classList.remove('active-button');
     }
 });

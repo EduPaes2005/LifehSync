@@ -1,11 +1,10 @@
 <header>
-    <!-- <p>Olá! <//?php echo $username; ?></p> Saudações-Cabeçalho -->
+    <p>Olá! <?php echo $username; ?></p>
     <div class="buttons">
-        <button id="homeButton"></button>
-        <button id="fireButton"></button>
-        <button id="fullscreenButton"></button>
-        <button id="shareButton"></button>
+        <button id="homeButton"><a href="logout.php"></a></button>
         <button id="muteButton"></button>
+        <button id="shareButton"></button>
+        <button id="fullscreenButton"></button>
         <div class="container">
             <button class="toggle-button" id="settingsButton"></button>
             <div class="ferramentabar">
@@ -15,6 +14,6 @@
             </div>
         </div>
     </div>
-    <h1>LifehSync</h1> <!--Título-Cabeçalho-->
+    <h1>LifehSync</h1>
     <div class="rainbow-line"></div>
 </header>

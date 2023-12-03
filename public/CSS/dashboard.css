@@ -1,188 +1,169 @@
-/*Estrutura d.corpo*/
 body {
-    color: #FFF;/*Cor d.fonte*/
-    /* cursor: url(../assets/Cursor.svg), auto; - Cursor Personalizado*/
-    overflow: hidden;/*Esconde barra d.rolagem*/
-    font-family: "Feather Bold";/*Estilo d.fonte*/
-    /*font-family: Feather;-Sem net-Manter em cache na locahost by Users*/
+    color: #FFF;
+    cursor: url(../assets/Cursor1.svg), auto;
+    overflow: hidden;
+    font-family: "Feather";
 }
 
-/*Vídeo d.fundo*/
 .background-video {
-    top: 0;/*Topo*/
-    left: 0;/*Esquerda*/
-    width: 100%;/*Largura*/
-    height: 100%;/*Altura*/
-    position: fixed;/*Posição fixa*/
-    pointer-events: none;/*Reações d.cursor desativada*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    pointer-events: none;
 }
 
-/*Vídeo d.Youtube*/
 #youtubeVideo {
     top: 50%;
     left: 50%;
     width: 100vw;
     height: 56.25vw;
-    position: absolute;/*Posição absoluta*/
-    min-width: 177.78vh;/*Minímo d.largura*/
-    transform: translate(-50%, -50%);/*Transforma translação*/
-    min-height: 100vh;/*Minímo d.altura*/
+    position: absolute;
+    min-width: 177.78vh;
+    transform: translate(-50%, -50%);
+    min-height: 100vh;
 }
 
-/*Cabeçalho*/
 header {
-    z-index: 1;/*Avançar sobre elementos*/
-    display: flex;/*Tela adaptável*/
-    position: relative;/*Posição relativa*/
-    box-shadow: 0px 2px 15px #000;/*Sombra d.objeto*/
-    align-items: center;/*Alinha itens ao centro*/
-    flex-direction: column;/*Direção adaptável d.elementos em coluna*/
-    background-color: #131E22;/*Cor-Plano d.fundo*/
+    z-index: 1;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 2px 15px #000;
+    align-items: center;
+    flex-direction: column;
+    background-color: #131E22F2;
 }
 
-/*Saudações-Cabeçalho*/
 header p {
     width: fit-content;
-    color: #FFF;
-    inset: 9px 0 0 80px; /*ADM*/
-    /* inset: 9px 0 0 15px; - Normal*/
+    inset: 9px 0 0 80px;
     height: fit-content;
     position: absolute;
 }
 
-/*Botões*/
 .buttons {
-    inset: 6.4px;/*Posição definida dentro d.elemento*/
+    inset: 6.4px;
     position: absolute;
 }
-
 
 .buttons button {
-    padding: 15px;/*Espaçamento interno entre elementos*/
+    padding: 15px;
     position: absolute;
-    background-size: cover;/*Prenche plano d.fundo*/
+    background-size: cover;
     background-color: #5550;
-    background-repeat: no-repeat;/*Repetição d.plano d.fundo nula*/
-    background-position: center;/*Posição d.plano d.fundo centro*/
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/*Botão-Ofensiva*/
-button#fireButton {
-    /*top: -3.5px;-Sem net*/
+button#homeButton {
     top: -2px;
-    left: -6px;
+    left: -3px;
     position: absolute;
-    background-size: 28px;/*Tamanho d.plano d.fundo*/
-    background-image: url(../assets/Fire.svg);/*Imagem-Plano d.fundo*/
+    background-size: 27px;
+    background-image: url(../assets/Home.svg);
 }
 
-/*Botão-Mutar*/
+button#homeButton a {
+    top: 2px;
+    left: 2px;
+    width: 27px;
+    height: 28px;
+    z-index: 1;
+    position: absolute;
+}
+
 button#muteButton {
-    /*top: -4px;-Sem net*/
     top: -2px;
-    left: 31px;
+    left: 35px;
     position: absolute;
-    /* Imagem d.fundo inicial p,o botão d.mute */
     background-image: url(../assets/Mute.svg);
 }
 
-/*Botão-Configurações*/
 button#settingsButton {
-    /* top: -4px;-Sem net */
     top: -2.3px;
-    right: 36px;/*Direita*/
+    right: 36px;
     position: absolute;
     background-image: url(../assets/Enginner.svg);
 }
 
-/*Botão-Tela cheia*/
 button#fullscreenButton {
-    /*top: -3.45px;-Sem net*/
     top: -2.08px;
     right: -2px;
     position: absolute;
     background-image: url(../assets/Fullscreen.svg);
 }
 
-/*Título-Cabeçalho*/
 header h1 {
-    margin: 4.7px 0;/*Espaço externo entre elementos*/
-    font-size: 23px;/*Tamanho d.fonte*/
-    letter-spacing: 0.46px;/*Espaço entre letras*/
+    margin: 4.7px 0;
+    font-size: 23px;
+    letter-spacing: 0.46px;
 }
 
-/*Linha dêgrade*/
 .rainbow-line {
-    width: 100%;/*Largura*/
-    height: 2px;/*Altura - Esta especifíca determina a espessura d.linha dêgrade*/
-    background-size: 50% 100%;/*Dimensão d.cada cor dêgrade*/
-    background-image: linear-gradient(90deg, #00B010, #00B010, #0EC6E8, #0050C0, #0050C0, #8C58A3, #8C58A3, #F7421E, #FF0000, #F7421E, #8C58A3, #8C58A3, #0050C0, #0050C0, #0EC6E8,#00B010, #00B010);/*Cores dêgrade d.linha*/
-    animation: rainbow 3s linear infinite;/*Nome d.animação, duração, modo e repetição*/
+    width: 100%;
+    height: 0.6px;
+    background-size: 50% 100%;
+    background-image: linear-gradient(90deg, #00B010, #00B010, #0EC6E8, #0050C0, #0050C0, #8C58A3, #8C58A3, #F7421E, #FF0000, #F7421E, #8C58A3, #8C58A3, #0050C0, #0050C0, #0EC6E8,#00B010, #00B010);
+    animation: rainbow 5s linear infinite;
 }
-/*Animação-Linha dêgrade*/
-@keyframes rainbow {/*Controla movimento d.dêgrade*/
+
+@keyframes rainbow {
     0% {
-        background-position: 0 0;/*Posição inicial d.animação*/
+        background-position: 0 0;
     }
     100% {
-        background-position: 100% 0;/*Posição final d.animação*/
+        background-position: 100% 0;
     }
 }
 
-/*Configurações-Barra d.ferramentas*/
 .container {
     z-index: 1;
     position: relative;
 }
 
-/*Barra d.configurações*/
 .ferramentabar {
     height: 0;
     background-color: #131E22;
     position: absolute;
-    /*top: 28.5px;-Sem net*/
     top: 31.5px;
     right: 35.8px;
     overflow: hidden;
     transition: height 0.3s;
     width: 29.5px;
     display: flex;
-    flex-wrap: wrap;/*Quebra linha de informações em relação a tela*/
+    flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;/*Alinha conteúdo ao centro*/
+    align-content: center;
     align-items: center;
-    justify-content: flex-start;/*Justifica conteúdo ao topo em relação a tela*/
+    justify-content: flex-start;
 }
 
-/*Conteúdo-Modalidade*/
 .first-access-form {
     width: fit-content;
     height: fit-content;
     margin: 5px auto;
-    border: 1.5px solid #26253CA6;/*Espessura d.Borda, tipo e cor*/
+    border: 1.5px solid #26253CA6;
     padding: 15px;
     z-index: 1;
     position: relative;
-    text-align: center;/*Texto alinhado ao centro*/
-    border-radius: 6px;/*Circunferência d.borda*/
+    text-align: center;
+    border-radius: 6px;
     background-color: #0D0D0D8C;
 }
 
-/*Título-Formulário modalidade*/
 h3 {
-    margin: 0 0 15px 0;/*Margem d.topo, direita, abaixo, esquerda*/
+    margin: 0 0 15px 0;
     font-size: larger;
-    text-shadow: 1px 2px 3px #000;/*Deslocamento sombra d.texto, borrado e cor*/
+    text-shadow: 1px 2px 3px #000;
 }
 
-/*Título-Campo d.seleção-Modadalidade*/
 label {
     font-size: 16px;
     font-family: Georgia;
     text-shadow: 1.3px 1px 3px #000;
 }
 
-/*Campo d.seleção-Modadalidade*/
 .modality-field select {
     width: 131px;
     border: 2px solid #E7E6E6;
@@ -194,7 +175,6 @@ label {
     border-radius: 15px;
 }
 
-/*Botão-Modalidade*/
 form button {
     margin: 15px 0 0 0;
     padding: 4px 8px 4px 8px;
@@ -203,9 +183,7 @@ form button {
     background-color: #F94B63;
 }
 
-/*Barra d.ferramentas*/
 .toolbar {
-    /*top: 44px;-Sem net*/
     top: 47px;
     left: 4.5px;
     width: 3.5%;
@@ -221,7 +199,6 @@ form button {
     background-color: #333;
 }
 
-/*Itens-Barra d.ferramentas*/
 .toolbar-item {
     color: white;
     border: 1px solid #FFF;
@@ -231,14 +208,13 @@ form button {
     background-color: #555;
 }
 
-/*Icones-Barra d.ferramentas*/
-#lo-fi, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
+#youtube, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
     background-repeat: no-repeat;
     background-position: center;
 }
 
-#lo-fi {
-    background-image: url(../assets/Sounds.svg);
+#youtube {
+    background-image: url(../assets/Youtube.svg);
 }
 
 #mindfulness {
@@ -263,18 +239,15 @@ form button {
 
 #task {
     background-image: url(../assets/Nots.svg);
-    background-position: 6.5px;
 }
 
-#lo-fi.active-button, #mindfulness.active-button, #calendar.active-button, #pomodoro.active-button, #spotify.active-button, #notebook.active-button, #task.active-button {
+#youtube.active-button, #mindfulness.active-button, #calendar.active-button, #pomodoro.active-button, #spotify.active-button, #notebook.active-button, #task.active-button {
     border: 2px solid #FFF;
     transform: scale(1.15);
-    /* transition: transform 0s ease*/
     transition: transform 0.6s, background-color 0.6s ease;
     background-color: #949494;
 }
 
-/*Área d.trabalho*/
 .workspace {
     top: 40px;
     right: 1px;
@@ -284,9 +257,13 @@ form button {
     position: absolute;
 }
 
-/*Ferramentas*/
-#tool1, #tool2, #tool3, #tool4, #tool5, #tool6, #tool7 {
-    /* Configuração inicial para a ferramenta Pomodoro */
+#tool1,
+#tool2,
+#tool3,
+#tool4,
+#tool5,
+#tool6,
+#tool7 {
     width: 0px;
     height: 0px;
     cursor: move;
@@ -296,29 +273,104 @@ form button {
     position: absolute;
     border-radius: 20px;
     justify-content: center;
-    background-color: #1A2D52;
+    background-color: #333333f7;
 }
 
 .tool-content {
     padding: 0px;
 }
 
-/*Músicas ambientes - Ferramenta*/
 #tool1 {
-    /*...*/
+    cursor: move;
 }
 
-/*Área zen - Ferramenta*/
+#tool1 .header {
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool1 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.1px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool1 #minimize-icon {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool1 hr {
+    width: 9px;
+    border: 1.5px solid #FFF;
+}
+
+#tool1 .body {
+    margin: 7px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tool1 label {
+    margin: 25.1px 0 3.86px 6px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    text-shadow: none;
+    letter-spacing: 0.22px;
+}
+
+#tool1 input#videoUrl {
+    margin: 0 0 -3px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#tool1 input#videoUrl::placeholder {
+    color: #4C5053;
+    padding: 0 0 0 13px;
+    font-size: 9.9px;
+    font-weight: 500;
+    letter-spacing: 0.18px;
+}
+
+#tool1 button#btn {
+    inset: 3.35px 0 0 0;
+    position: relative;
+}
+
+#tool1 button#btn {
+    color: #4C5053;
+    width: 164.67px;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    padding: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.3px;
+    background-color: #FFF;
+}
+
 #tool2 {
     /*...*/
 }
 
-/*Agenda - Ferramenta*/
 #tool3 {
     /*...*/
 }
 
-/*Pomodoro - Ferramenta*/
 #tool4 {
     cursor: move;
 }
@@ -338,37 +390,14 @@ div#timer {
     text-shadow: 1px 1px 6px #000;
 }
 
-button#start {
+button#start,
+button#pause,
+button#reset {
     color: #000;
     width: 80px;
     border: 2px solid #E7E6E6;
     height: 28px;
     font-size: 14px;
-    /* background: #FFFFB3; */
-    box-shadow: 3px 5px 9px 0px #00000073;
-    box-sizing: border-box;
-    border-radius: 15px;
-}
-
-button#pause {
-    color: #000;
-    width: 90px;
-    border: 2px solid #E7E6E6;
-    height: 28px;
-    font-size: 14px;
-    /* background: #FFFFB3; */
-    box-shadow: 3px 5px 9px 0px #00000073;
-    box-sizing: border-box;
-    border-radius: 15px;
-}
-
-button#reset {
-    color: #000;
-    width: 100px;
-    border: 2px solid #E7E6E6;
-    height: 28px;
-    font-size: 14px;
-    /* background: #FFFFB3; */
     box-shadow: 3px 5px 9px 0px #00000073;
     box-sizing: border-box;
     border-radius: 15px;
@@ -378,12 +407,60 @@ button#reset {
     margin: 5px;
 }
 
-/*Spotify - Ferramenta*/
 #tool5 {
-    /*...*/
+    cursor: move;
 }
 
-/*Cadernos - Ferramenta*/
+#tool5 .tool-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#tool5 .header {
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool5 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool5 #minimize-icon {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool5 hr {
+    width: 9px;
+    border: 1.5px solid #FFF;
+}
+
+#tool5 button {
+    font-family: Feather;
+    background-color: transparent;
+}
+
+#tool5 a {
+    color: #FFF;
+    text-align: center;
+}
+
+#tool5 .body {
+    margin: 41px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
 #tool6 {
     cursor: move;
 }
@@ -403,7 +480,7 @@ button#reset {
 }
 
 #tool6 h1 {
-    margin: 1px 145px 0 13px;
+    margin: 1px 0 0 13px;
     font-size: 11.5px;
     font-weight: bold;
     font-family: Arial;
@@ -414,7 +491,7 @@ button#reset {
     color: #FFF;
     width: 45.833px;
     height: 27.7px;
-    margin: 1px 0 0 0;
+    margin: 1px -93px 0 0;
     border: 1.4px solid #515151;
     cursor: pointer;
     font-size: 9.5px;
@@ -435,7 +512,6 @@ button#reset {
     border: 1.5px solid #FFF;
 }
 
-/* Estilos para o corpo do conteúdo */
 #tool6 ::-webkit-scrollbar {
     width: 3.5px;
     background-color: transparent;
@@ -446,13 +522,12 @@ button#reset {
     background-color: #FFF;
 }
 
-/* Estilos específicos para AddNotebook */
-#tool6 #addNotebook .header h1 {
-    margin: 1px 156px 0 13px;
-    font-size: 11.5px;
-    font-weight: bold;
-    font-family: Arial;
-    letter-spacing: 0.3px;
+#tool6 #addNotebook {
+    display: none;
+}
+
+#tool6 #addNotebook .header button#back {
+    margin: 1px 0 0 156px;
 }
 
 #tool6 form#form {
@@ -536,10 +611,10 @@ button#reset {
 }
 
 #tool6 input#cover {
-    top: -39px;
+    top: -41px;
     left: 1px;
     width: 134.6px;
-    height: 26.04px;
+    height: 27px;
     cursor: pointer;
     opacity: 0;
     position: relative;
@@ -563,19 +638,26 @@ button#reset {
     background-color: #FFF;
 }
 
-/* Estilos específicos para Notebook */
+.tool6 {
+    position: relative;
+}
+
+#tool6 #Notebook {
+    position: relative;
+}
+
 #tool6 #Notebook .body {
     overflow: auto;
     padding: 17px 11.5px 9px 17px;
     display: flex;
     flex-wrap: wrap;
     max-height: 441px;
-    margin: 2px 2px 0 2px;
+    margin: 1px 2px 0 2px;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#tool6 #Notebook .body a {
+#tool6 #Notebook .linkNotebooks {
     width: 115px;
     height: 167.63px;
     cursor: pointer;
@@ -584,13 +666,14 @@ button#reset {
     border-radius: 17px;
     background-size: cover;
     background-color: #FFF;
+    background-position: center;
 }
 
 #tool6 #create {
     color: #FFF;
     width: 45.833px;
     height: 27.7px;
-    margin: 1px 0 0 0;
+    margin: 1px -146px 0 0;
     border: 1.4px solid #515151;
     cursor: pointer;
     font-size: 9.5px;
@@ -600,44 +683,23 @@ button#reset {
     background-color: transparent;
 }
 
-#tool6 #notebook1 {
-    background-image: url(../assets/Livro1.svg);
-}
-#tool6 #notebook2 {
-    background-image: url(../assets/Livro2.svg);
-}
-#tool6 #notebook3 {
-    background-image: url(../assets/Livro3.svg);
-}
-#tool6 #notebook4 {
-    background-image: url(../assets/Livro4.svg);
-}
-#tool6 #notebook5 {
-    background-image: url(../assets/Livro5.svg);
-}
-#tool6 #notebook6 {
-    background-image: url(../assets/Livro6.svg);
-}
-#tool6 #notebook7 {
-    background-image: url(../assets/Livro7.svg);
-}
-#tool6 #notebook8 {
-    background-image: url(../assets/Livro8.svg);
-}
-#tool6 #notebook9 {
-    background-image: url(../assets/Livro9.svg);
-}
-#tool6 #notebook10 {
-    background-image: url(../assets/Livro10.svg);
-}
-#tool6 #notebook11 {
-    background-image: url(../assets/Livro11.svg);
-}
-#tool6 #notebook12 {
-    background-image: url(../assets/Livro12.svg);
+#tool6 #Notebook .footer {
+    width: 292px;
+    height: 27.4px;
+    border-top: 1.4px solid #FFF;
+    padding: 4px;
+    text-align: center;
 }
 
-/* Estilos específicos para NotebookSubject */
+#tool6 #notebookSubject {
+    display: none;
+}
+
+#tool6 #notebookSubject .header button#back {
+    margin: 1px 0 0 218px;
+    position: absolute;
+}
+
 #tool6 #notebookSubject .body {
     flex: 1;
     display: flex;
@@ -659,7 +721,6 @@ button#reset {
     font-family: FANGSONG;
 }
 
-/* Estilos para o rodapé comum */
 #tool6 .footer {
     height: 26.814px;
     border-top: 1.4px solid #FFF;
@@ -681,12 +742,48 @@ button#reset {
     margin-left: 5px;
 }
 
-/*Notas - Ferramenta*/
 #tool7 {
-    /*...*/
+    cursor: move;
 }
 
-/*Contorno dêgrade*/
+#tool7 .header{
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool7 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool7 button#minimize-icon {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool7 hr {
+    width: 9px;
+    border: 1.5px solid #FFF;
+}
+
+#tool7 textarea#subject {
+    height: 138px;
+    width: 278.87px;
+    padding: 10px;
+    color: #FFF;
+    background-color: transparent;
+    overflow: hidden;
+}
+
 .rainbow-border {
     right: 9px;
     width: 54px;
@@ -695,17 +792,17 @@ button#reset {
     position: absolute;
     box-shadow: 0px 0px 6px 1px #CA00FA;
     border-radius: 50%;
-    background-size: 100% 50%;/*Dimensão d.cada cor dêgrade*/
-    background-image: linear-gradient(180deg, #FF0000 10%, #F7421E 23%, #0050C0 27%, #00B010 90%, #FF0000 100%);/*Cores dêgrade d.contorno*/
-    animation: rainbow-border 6s linear infinite;/*Nome d.animação, duração, modo e repetição*/
+    background-size: 100% 50%;
+    background-image: linear-gradient(180deg, #FF0000 10%, #F7421E 23%, #0050C0 27%, #00B010 90%, #FF0000 100%);
+    animation: rainbow-border 6s linear infinite;
 }
-/*Animação-contorno dêgrade*/
-@keyframes rainbow-border {/*Controla movimento d.dêgrade*/
+
+@keyframes rainbow-border {
     0% {
-        background-position: 0 0;/*Posição inicial d.animação*/
+        background-position: 0 0;
     }
     100% {
-        background-position: 0 100%;/*Posição final d.animação*/
+        background-position: 0 100%;
     }
 }
 
@@ -724,7 +821,6 @@ button#perfil-icon {
     background-position: center;
 }
 
-/*Xiaomi 8 Pro*/
 @media screen and (max-width: 768px) {
     .workspace {
         top: 37px;
@@ -738,7 +834,7 @@ button#perfil-icon {
         width: 12.3%;
         padding: 3px;
     }
-    #lo-fi, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
+    #youtube, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
         background-size: 33px;
     }
 }
@@ -757,7 +853,7 @@ button#perfil-icon {
         bottom: 2.5px;
         padding: 3px;
     }
-    #lo-fi, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
+    #youtube, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
         background-size: 32px;
     }
     button#task {

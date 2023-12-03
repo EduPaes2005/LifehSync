@@ -22,21 +22,20 @@ $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 $firstAccessCompleted = !empty($userData['modality']);
 ?>
 
-<!DOCTYPE html> <!-- Documento HTML -->
-<html lang="pt-BR"> <!-- Página em Português-BR -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<head> <!--Cabeça-Funções internas-->
-    <meta charset="UTF-8"> <!-- Caractéres Especiais -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Proporção d.Tela -->
-    <script type="text/javascript" src="https://db.onlinewebfonts.com/s/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold"></script> <!--Importando fontes-->
-    <link rel="stylesheet" href="../public/CSS/normalize.css"> <!-- Importando Arquivo d.Estilização -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://db.onlinewebfonts.com/s/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold"></script>
+    <link rel="stylesheet" href="../public/CSS/normalize.css">
     <link rel="stylesheet" href="../public/CSS/dashboard.css">
-    <link rel="icon" href="../public/assets/LogoDesktop.svg" type="image/svg" media="(min-width: 769px)"> <!--Logo-Guia d.navegação-Desktop-->
-    <link rel="icon" href="../public/assets/LogoMobile.svg" type="image/svg" media="(max-width: 768px)"> <!--Logo-Guia d.navegação-Mobile-->
-    <title>LifehSync</title> <!-- Título - Guia d.Navegação -->
+    <link rel="icon" href="../public/assets/LogoDesktop.svg" type="image/svg" media="(min-width: 769px)">
+    <link rel="icon" href="../public/assets/LogoMobile.svg" type="image/svg" media="(max-width: 768px)">
+    <title>LifehSync</title>
 </head>
 
-<!--Corpo-->
 <body>
     <div class="background-video">
         <iframe id="youtubeVideo" width="100%" height="100%"
@@ -73,7 +72,7 @@ $firstAccessCompleted = !empty($userData['modality']);
     <?php include 'components/firstAccess.php'; ?>
 
     <div class="toolbar">
-        <button class="toolbar-item" id="lo-fi"></button>
+        <button class="toolbar-item" id="youtube"></button>
         <button class="toolbar-item" id="mindfulness"></button>
         <button class="toolbar-item" id="calendar"></button>
         <button class="toolbar-item" id="pomodoro"></button>
@@ -83,21 +82,19 @@ $firstAccessCompleted = !empty($userData['modality']);
     </div>
 
     <div class="workspace">
-
-        <!-- Elementos do workspace aqui -->
         <div class="tool" id="tool1">
             <div class="tool-content">
-                <!-- Tool Content 1 -->
+                <!--Tool Content 1-->
             </div>
         </div>
         <div class="tool" id="tool2">
             <div class="tool-content">
-                <!-- Tool Content 2 -->
+                <!--Tool Content 2-->
             </div>
         </div>
         <div class="tool" id="tool3">
             <div class="tool-content">
-                <!-- Tool Content 3 -->
+                <!--Tool Content 3-->
             </div>
         </div>
         <!--Pomodoro-->
@@ -106,7 +103,7 @@ $firstAccessCompleted = !empty($userData['modality']);
         </div>
         <div class="tool" id="tool5">
             <div class="tool-content">
-                <!-- Tool Content 5 -->
+                <!--Tool Content 5-->
             </div>
         </div>
         <!--Cadernos-->
@@ -115,12 +112,12 @@ $firstAccessCompleted = !empty($userData['modality']);
         </div>
         <div class="tool" id="tool7">
             <div class="tool-content">
-                <!-- Tool Content 7 -->
+                <!--Tool Content 7-->
             </div>
         </div>
     </div>
 
-    <!-- <a href="logout.php">Deslogar</a> Link-Rodapé -->
+    <!--<a href="logout.php">Deslogar</a>-->
 
     <div class="perfil">
         <div class="rainbow-border"></div>
@@ -128,6 +125,5 @@ $firstAccessCompleted = !empty($userData['modality']);
     </div>
 
     <script src="../public/JS/script.js"></script>
-
 </body>
 </html>

@@ -6,9 +6,9 @@
 
                 <div class="modality-field">
                     <label for="modality">Modalidade</label>
-                    <select name="modality" required> <!--Campo d.seleção-->
-                        <option value="" disabled selected>Selecione...</option> <!--Opção desativada, apenas info-->
-                        <option value="Trabalho">Trabalho</option> <!--Opções disponíveis-->
+                    <select name="modality" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Trabalho">Trabalho</option>
                         <option value="Leitura">Leitura</option>
                         <option value="Estudo">Estudo</option>
                         <option value="Outros...">Outros...</option>

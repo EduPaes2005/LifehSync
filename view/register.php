@@ -19,37 +19,33 @@
     }
 ?>
 
-<!DOCTYPE html> <!--Documento HTML-->
-<html lang="pt-BR"> <!--Página em Português-BR-->
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<head> <!--Cabeça-Funções internas-->
-    <meta charset="UTF-8"> <!--Caractéres especiais-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Proporção p.diferentes dimensões d.telas-->
-    <link href="https://fonts.googleapis.com/css?family=Calibri|Georgia"> <!--Importando fontes-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Calibri|Georgia">
     <script type="text/javascript" src="https://db.onlinewebfonts.com/s/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold"></script>
-    <link rel="stylesheet" href="../public/CSS/normalize.css"> <!--Importando estilizações-->
+    <link rel="stylesheet" href="../public/CSS/normalize.css">
     <link rel="stylesheet" href="../public/CSS/register.css">
-    <link rel="icon" href="../public/assets/LogoDesktop.svg" type="image/svg" media="(min-width: 769px)"> <!--Logo-Guia d.navegação-Desktop-->
-    <link rel="icon" href="../public/assets/LogoMobile.svg" type="image/svg" media="(max-width: 768px)"> <!--Logo-Guia d.navegação-Mobile-->
-    <title>LifehSync</title> <!--Título-Guia d.navegação-->
+    <link rel="icon" href="../public/assets/LogoDesktop.svg" type="image/svg" media="(min-width: 769px)">
+    <link rel="icon" href="../public/assets/LogoMobile.svg" type="image/svg" media="(max-width: 768px)">
+    <title>LifehSync</title>
 </head>
 
-<!--Corpo-->
 <body>
-
 <!--Cabeçalho-->
 <?php include 'components/header.php'; ?>
 
-<!--Principal-->
 <main>
-
-    <div id="register-container"> <!--Recipiente-Formulário-->
-        <form id="form-register" method="POST"> <!--Formulário-->
-            <h2>Crie seu Perfil</h2> <!--Título-Formulário-->
+    <div id="register-container">
+        <form id="form-register" method="POST">
+            <h2>Crie seu Perfil</h2>
 
             <div class="name-field">
-                <label for="username">Nome de usuário</label> <!--Rótulo-Campo d.preenchimento-->
-                <input type="text" name="username" placeholder="Coloque seu nome" required> <!--Campo d.preenchimento-->
+                <label for="username">Nome de usuário</label>
+                <input type="text" name="username" placeholder="Coloque seu nome" required>
             </div>
 
             <div class="email-field">
@@ -69,7 +65,7 @@
         </form>
     </div>
 
-    <img id="object-1" src="../public/assets/object-1.svg"> <!--Imagem-->
+    <img id="object-1" src="../public/assets/object-1.svg">
     <img id="object-2" src="../public/assets/object-2.svg">
     <img id="object-3" src="../public/assets/object-3.svg">
     <img id="object-4" src="../public/assets/object-4.svg">
@@ -79,25 +75,24 @@
     <p id="or">OU</p>
     <div class="rnormal-line"></div>
 
-    <button id="google"></button> <!--Botão-->
+    <button id="google"></button>
     <button id="facebook"></button>
     <button id="twitter"></button>
 
-    <div id="rectangle-container"> <!--Recipiente-Retangular-->
-        <img id="img-slogan" src="../public/assets/img.svg"> <!--Slogan-->
+    <div id="rectangle-container">
+        <img id="img-slogan" src="../public/assets/slogan.svg">
 
         <button id="btn-register" type="submit" name="register" form="form-register">CADASTRAR</button>
-        <a href="../public/index.php" id="index-link">Voltar para o login</a> <!--Link-Direciona à pág.Index-->
+        <a href="../public/index.php" id="index-link">Voltar para o login</a>
 
-        <div class="paragrapho"> <!--Recipiente-Paragráfo-->
-            <p id="term-privacy1">Ao entrar no LifehSync, você concorda com os nossos <span>Termos</span> e <span>Política de Privacidade</span>.</p> <!--Paragráfo1-->
-            <p id="term-privacy2">Este site é protegido pela reCAPTCHA Enterprise. Aplicam-se a <span>Política de Privacidade</span> e os <span>Termos de Uso</span> do Google.</p> <!--Paragráfo2-->
+        <div class="paragrapho">
+            <p id="term-privacy1">Ao entrar no LifehSync, você concorda com os nossos <span>Termos</span> e <span>Política de Privacidade</span>.</p>
+            <p id="term-privacy2">Este site é protegido pela reCAPTCHA Enterprise. Aplicam-se a <span>Política de Privacidade</span> e os <span>Termos de Uso</span> do Google.</p>
         </div>
     </div>
 </main>
-
-    <!--Rodapé-->
-    <?php include 'components/footer.php'; ?>
+<!--Rodapé-->
+<?php include 'components/footer.php'; ?>
 
 </body>
-</html> <!--Fim d.página-->
+</html>

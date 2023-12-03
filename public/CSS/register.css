@@ -1,9 +1,12 @@
 /*Estrutura d.corpo*/
 body {
     color: #FFF;/*Cor d.fonte*/
+    display: flex;
     overflow: hidden;/*Esconde barra d.rolagem*/
     min-height: 100vh;/*Mínimo d.altura relativo ao espaço d.página*/
-    font-family: "Feather Bold";/*Estilo d.fonte*/
+    font-family: "Feather";/*Estilo d.fonte*/
+    flex-direction: column;
+    justify-content: space-between;
     background-size: cover;/*Preenche plano d.fundo*/
     background-image: url(../assets/Background\ -\ Register.svg);/*Imagem-Plano d.fundo*/
     background-position: center;/*Centro&reposiciona o topo d.imagem d.fundo*/
@@ -25,10 +28,10 @@ header h1 {
 /*Linha dêgrade*/
 .rainbow-line {
     width: 100%;/*Largura*/
-    height: 2px;/*Altura - Esta especifíca determina a espessura d.linha dêgrade*/
+    height: 0.3px;/*Altura - Esta especifíca determina a espessura d.linha dêgrade*/
     background-image: linear-gradient(90deg, #00B010, #00B010, #0EC6E8, #0050C0, #0050C0, #8C58A3, #8C58A3, #F7421E, #FF0000, #F7421E, #8C58A3, #8C58A3, #0050C0, #0050C0, #0EC6E8,#00B010, #00B010);/*Cores dêgrade d.linha*/
     background-size: 50% 100%;/*Dimensão d.cada cor dêgrade*/
-    animation: rainbow 3s linear infinite;/*Nome d.animação, duração, modo e repetição*/
+    animation: rainbow 5s linear infinite;/*Nome d.animação, duração, modo e repetição*/
 }
 /*Animação-Linha dêgrade*/
 @keyframes rainbow {/*Controla movimento d.dêgrade*/
@@ -39,6 +42,10 @@ header h1 {
         background-position: 100% 0;/*Posição final d.animação*/
     }
 }
+main {
+    display: block;
+    margin: 0 0 25px 0;
+}
 /*Recipiente-Formulário*/
 #register-container {
     margin: 36.9px 0 0 78.8px;/*Margem d.topo, direita, abaixo, esquerda*/
@@ -46,9 +53,9 @@ header h1 {
 /*Título-Formulário*/
 #form-register h2 {
     width: 172.95px;
-    margin: 0 0 21px 0;
+    margin: 0 0 43px 0;
     font-size: 24.1px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);/*Deslocamento sombra d.texto, borrado, cor e transparência*/
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);
     letter-spacing: 0.482px;
 }
 /*Rótulos*/
@@ -76,7 +83,7 @@ input::placeholder {
 .name-field, .email-field {
     width: 581px;
     height: 57px;
-    padding: 2px 0 0 0;
+    padding: 8px 0 0 0;
 }
 /*Nome&Email-Campo d.preenchimento*/
 input[type="text"], input[type="email"] {
@@ -163,7 +170,7 @@ input[type="password"] {
 .lnormal-line {
     width: 101.8px;
     height: 2px;
-    margin: 85px 0 0 144px;
+    margin: 68px 0 0 144px;
     background-color: #FFF;
 }
 /*OU*/
@@ -204,7 +211,7 @@ input[type="password"] {
 }
 /*Twitter-Botão*/
 #twitter {
-    margin: 46.1px 0 0 5px;
+    margin: 31.1px 0 0 5px;
     background: #FFA5BB;
     background-image: url(../assets/Twitter-icon.svg);
     background-position: center;
@@ -235,7 +242,7 @@ input[type="password"] {
     box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
     border-radius: 12px;
     /*Texto*/
-    font-family: "Feather Bold";
+    font-family: "Feather";
     text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
 }
 /*Link*/
@@ -269,10 +276,6 @@ span {
 }
 /*Rodapé*/
 footer {
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    position: absolute;
     background-color: #131E22;
 }
 /*Texto-Rodapé*/

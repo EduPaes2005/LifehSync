@@ -78,7 +78,7 @@ if(isset($_POST['login'])){
     </div>
 
     <div class="rectangle-container"> <!--Recipiente-Retangular-->
-        <img id="img-slogan" src="assets/img.svg"> <!--Slogan-->
+        <img id="img-slogan" src="assets/slogan.svg"> <!--Slogan-->
 
         <div class="paragrapho"> <!--Recipiente-Paragráfo-->
             <p id="term-privacy1">Ao entrar no LifehSync, você concorda com os nossos <span>Termos</span> e <span>Política de Privacidade</span>.</p> <!--Paragráfo1-->

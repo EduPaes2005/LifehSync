@@ -15,14 +15,13 @@ class Crud{
     public function create($postValue){
         $title = $postValue['title'];
 
-        // Verifica se um arquivo foi enviado
         if(isset($_FILES['cover'])){
             $file = $_FILES['cover'];
             $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
             $ex_allows = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'svg');
 
             if(in_array(strtolower($extension), $ex_allows)){
-                $roadFile = '../public/assets/' . $file['name'];
+                $roadFile = '../public/assets/notebooks/' . $file['name'];
                 move_uploaded_file($file['tmp_name'], $roadFile);
             } else {
                 die('O tipo de imagem não é aceito!');

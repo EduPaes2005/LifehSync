@@ -1,4 +1,4 @@
-<div class="tool-content"><!-- Old.Element class -->
+<div id="Pomodoro" class="tool-content">
     <div id="timer">
         <span id="minutes">25</span>:<span id="seconds">00</span>
     </div>
