@@ -2,7 +2,7 @@ body {
     color: #FFF;
     cursor: url(../assets/Cursor1.svg), auto;
     overflow: hidden;
-    font-family: "Feather";
+    font-family: "Feather Bold";
 }
 
 .background-video {
@@ -35,6 +35,10 @@ header {
     background-color: #131E22F2;
 }
 
+header h1:hover {
+    transform: scale(1.1);
+}
+
 header p {
     width: fit-content;
     inset: 9px 0 0 80px;
@@ -61,7 +65,7 @@ button#homeButton {
     left: -3px;
     position: absolute;
     background-size: 27px;
-    background-image: url(../assets/Home.svg);
+    background-image: url(../assets/header-main/Home.svg);
 }
 
 button#homeButton a {
@@ -77,21 +81,21 @@ button#muteButton {
     top: -2px;
     left: 35px;
     position: absolute;
-    background-image: url(../assets/Mute.svg);
+    background-image: url(../assets/header-main/Mute.svg);
 }
 
 button#settingsButton {
     top: -2.3px;
     right: 36px;
     position: absolute;
-    background-image: url(../assets/Enginner.svg);
+    background-image: url(../assets/header-main/Enginner.svg);
 }
 
 button#fullscreenButton {
     top: -2.08px;
     right: -2px;
     position: absolute;
-    background-image: url(../assets/Fullscreen.svg);
+    background-image: url(../assets/header-main/Fullscreen.svg);
 }
 
 header h1 {
@@ -208,48 +212,53 @@ form button {
     background-color: #555;
 }
 
-#youtube, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
+.toolbar-item {
     background-repeat: no-repeat;
     background-position: center;
+    transition: transform 0.3s;
+}
+
+.toolbar-item:hover {
+    transform: scale(1.1);
 }
 
 #youtube {
-    background-image: url(../assets/Youtube.svg);
+    background-image: url(../assets/toolbar/Youtube.svg);
 }
 
 #mindfulness {
-    background-image: url(../assets/Mindfulness.svg);
+    background-image: url(../assets/toolbar/Mindfulness.svg);
 }
 
 #calendar {
-    background-image: url(../assets/Calendar.svg);
+    background-image: url(../assets/toolbar/Calendar.svg);
 }
 
 #pomodoro {
-    background-image: url(../assets/Pomodoro.svg);
+    background-image: url(../assets/toolbar/Pomodoro.svg);
 }
 
 #spotify {
-    background-image: url(../assets/Spotify.svg);
+    background-image: url(../assets/toolbar/Spotify.svg);
 }
 
 #notebook {
-    background-image: url(../assets/Notebook.svg);
+    background-image: url(../assets/toolbar/Notebook.svg);
 }
 
 #task {
-    background-image: url(../assets/Nots.svg);
+    background-image: url(../assets/toolbar/Nots.svg);
 }
 
 #youtube.active-button, #mindfulness.active-button, #calendar.active-button, #pomodoro.active-button, #spotify.active-button, #notebook.active-button, #task.active-button {
     border: 2px solid #FFF;
     transform: scale(1.15);
-    transition: transform 0.6s, background-color 0.6s ease;
+    transition: transform 0.5s, background-color 0.5s ease;
     background-color: #949494;
 }
 
 .workspace {
-    top: 40px;
+    top: 39px;
     right: 1px;
     width: 94%;
     height: 94.37%;
@@ -262,20 +271,14 @@ form button {
     height: 0px;
     cursor: move;
     border: none;
-    display: flex;
     overflow: hidden;
     position: absolute;
-    border-radius: 20px;
-    justify-content: center;
+    border-radius: 16px;
     background-color: #333333f7;
 }
 
 .tool-content {
     padding: 0px;
-}
-
-#tool1 {
-    cursor: move;
 }
 
 #tool1 .header {
@@ -315,7 +318,7 @@ form button {
 }
 
 #tool1 label {
-    margin: 25.1px 0 3.86px 6px;
+    margin: 25.1px 0 3.86px 0;
     font-size: 11.5px;
     font-weight: bold;
     font-family: Arial;
@@ -327,15 +330,18 @@ form button {
     margin: 0 0 -3px 0;
     border: 1.4px solid #515151;
     height: 24px;
+    width: 153.67px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 7px;
     background-color: #D9D9D9;
 }
 
 #tool1 input#videoUrl::placeholder {
     color: #4C5053;
-    padding: 0 0 0 13px;
     font-size: 9.9px;
     font-weight: 500;
+    text-align: center;
     letter-spacing: 0.18px;
 }
 
@@ -358,25 +364,67 @@ form button {
 }
 
 #tool2 {
-    /*...*/
+    z-index: 1;
+    position: absolute;
+    align-items: center;
+    border-radius: 15px;
+    pointer-events: none;
+    justify-content: center;
+    background-color: #000000eb;
+}
+
+#tool2 #circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #F14507;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: Feather;
+    color: #ffffff;
+    transition: all 4s ease-in-out;
 }
 
 #tool3 {
     /*...*/
 }
 
-#tool4 {
-    cursor: move;
+#tool4 .header{
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
 }
 
-#tool4 .tool-content {
-    padding: 13px;
+#tool4 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool4 button#minimize-icon {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool4 hr {
+    width: 9px;
+    border: 1.5px solid #FFF;
+}
+
+#tool4 .body {
+    margin: 5px 0 0 0;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 div#timer {
@@ -385,22 +433,27 @@ div#timer {
 }
 
 button#start, button#pause, button#reset {
-    color: #000;
-    width: 80px;
-    border: 2px solid #E7E6E6;
-    height: 28px;
-    font-size: 14px;
-    box-shadow: 3px 5px 9px 0px #00000073;
-    box-sizing: border-box;
-    border-radius: 15px;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+}
+
+button#start {
+    background-image: url(../assets/pomodoro/Play.svg);
+}
+
+button#pause {
+    background-image: url(../assets/pomodoro/Pause.svg);
+}
+
+button#reset {
+    background-image: url(../assets/pomodoro/Reset.svg);
 }
 
 .tool-content button {
     margin: 5px;
-}
-
-#tool5 {
-    cursor: move;
 }
 
 #tool5 .tool-content {
@@ -438,7 +491,7 @@ button#start, button#pause, button#reset {
 }
 
 #tool5 button {
-    font-family: Feather;
+    font-family: Feather Bold;
     background-color: transparent;
 }
 
@@ -448,13 +501,13 @@ button#start, button#pause, button#reset {
 }
 
 #tool5 .body {
-    margin: 41px 0 0 0;
+    margin: 20px 0 0 0;
     display: flex;
     justify-content: center;
 }
 
 #tool6 {
-    cursor: move;
+    display: grid;
 }
 
 #tool6 .tool-content {
@@ -538,7 +591,7 @@ button#start, button#pause, button#reset {
     position: relative;
     font-size: 17px;
     text-align: center;
-    font-family: Feather;
+    font-family: Feather Bold;
     letter-spacing: 0.34px;
 }
 
@@ -555,6 +608,8 @@ button#start, button#pause, button#reset {
     margin: 0 0 -3px 0;
     border: 1.4px solid #515151;
     height: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 7px;
     background-color: #D9D9D9;
 }
@@ -659,6 +714,11 @@ button#start, button#pause, button#reset {
     background-size: cover;
     background-color: #FFF;
     background-position: center;
+    transition: filter 0.3s ease; 
+}
+
+#tool6 #Notebook .linkNotebooks:hover {
+    filter: brightness(65%);
 }
 
 #tool6 #create {
@@ -734,10 +794,6 @@ button#start, button#pause, button#reset {
     margin-left: 5px;
 }
 
-#tool7 {
-    cursor: move;
-}
-
 #tool7 .header{
     width: 292px;
     height: 33.044px;
@@ -768,12 +824,27 @@ button#start, button#pause, button#reset {
 }
 
 #tool7 textarea#subject {
-    height: 138px;
-    width: 278.87px;
-    padding: 10px;
     color: #FFF;
+    width: 295px;
+    height: 149.46px;
+    resize: none;
+    margin: 1px 1px 4px 0;
+    padding: 3px 0 0 4px;
     background-color: transparent;
-    overflow: hidden;
+}
+
+#tool7 textarea#subject:focus {
+    outline: none;
+}
+
+#tool7 ::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: transparent;
+}
+
+#tool7 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #FFF;
 }
 
 .rainbow-border {

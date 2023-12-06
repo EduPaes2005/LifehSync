@@ -66,11 +66,11 @@
         </form>
     </div>
 
-    <img id="object-1" src="../public/assets/object-1.svg">
-    <img id="object-2" src="../public/assets/object-2.svg">
-    <img id="object-3" src="../public/assets/object-3.svg">
-    <img id="object-4" src="../public/assets/object-4.svg">
-    <img id="object-5" src="../public/assets/object-5.svg">
+    <img id="object-1" src="../public/assets/login&register/object-1.svg">
+    <img id="object-2" src="../public/assets/login&register/object-2.svg">
+    <img id="object-3" src="../public/assets/login&register/object-3.svg">
+    <img id="object-4" src="../public/assets/login&register/object-4.svg">
+    <img id="object-5" src="../public/assets/login&register/object-5.svg">
 
     <div class="lnormal-line"></div>
     <p id="or">OU</p>
@@ -81,7 +81,7 @@
     <button id="twitter"></button>
 
     <div id="rectangle-container">
-        <img id="img-slogan" src="../public/assets/slogan.svg">
+        <img id="img-slogan" src="../public/assets/login&register/slogan.svg">
 
         <button id="btn-register" type="submit" name="register" form="form-register">CADASTRAR</button>
         <a href="../public/index.php" id="index-link">Voltar para o login</a>

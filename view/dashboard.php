@@ -80,9 +80,7 @@ handleAjaxRequest($noteContent);
         </div>
 
         <div class="tool" id="tool2">
-            <div class="tool-content">
-                <!--Tool Content 2-->
-            </div>
+            <?php include 'components/tools/mindfullness.php'; ?>
         </div>
 
         <div class="tool" id="tool3">

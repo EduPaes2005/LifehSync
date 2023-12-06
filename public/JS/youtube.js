@@ -7,11 +7,13 @@ function embedVideo() {
 
     // Criar a tag iframe com a nova URL
     var iframe = document.createElement("iframe");
+    iframe.id = "youtubeVideo";
     iframe.width = "100%";
     iframe.height = "100%";
     iframe.src = embedUrl;
-    iframe.frameBorder = "0";
+    iframe.frameborder = "0";
     iframe.allow = "autoplay; fullscreen; encrypted-media";
+
 
     // Substituir o conteúdo do contêiner de vídeo com o novo iframe
     var videoContainer = document.getElementById("videoContainer");

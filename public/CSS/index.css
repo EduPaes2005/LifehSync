@@ -1,12 +1,13 @@
 body {
     color: #FFF;
+    cursor: url(../assets/Cursor1.svg), auto;
     display: flex;
     min-height: 100vh;
-    font-family: "Feather";
+    font-family: "Feather Bold";
     flex-direction: column;
     justify-content: space-between;
     background-size: cover;
-    background-image: url(../assets/Background\ -\ Index.svg);
+    background-image: url(../assets/login&register/Background\ -\ Index.svg);
     background-position: center;
 }
 
@@ -108,7 +109,7 @@ input[type="password"] {
     background: linear-gradient(0deg, #F9CF7D 0%, #A21F5B 20.31%, #621B5A 91.67%);
     box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
     border-radius: 12px;
-    font-family: "Feather";
+    font-family: "Feather Bold";
     text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
 }
 
@@ -205,7 +206,7 @@ input[type="password"] {
 #google {
     margin: 0 0 0 76px;
     background: #9DC3E6;
-    background-image: url(../assets/Google-icon.svg);
+    background-image: url(../assets/login&register/Google-icon.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -213,7 +214,7 @@ input[type="password"] {
 #facebook {
     margin: 0 0 0 5px;
     background: #FFFFB3;
-    background-image: url(../assets/Facebook-icon.svg);
+    background-image: url(../assets/login&register/Facebook-icon.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -221,7 +222,7 @@ input[type="password"] {
 #twitter {
     margin: 49.9px 0 0 5px;
     background: #FFA5BB;
-    background-image: url(../assets/Twitter-icon.svg);
+    background-image: url(../assets/login&register/Twitter-icon.svg);
     background-position: center;
     background-repeat: no-repeat;
 }

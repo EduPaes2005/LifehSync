@@ -44,11 +44,11 @@ document.addEventListener('visibilitychange', handleVisibilityChange, false);
 muteButton.addEventListener('click', () => {
     if (isMuted) {
         video.src = video.src.replace('mute=1', 'mute=0');
-        muteButton.style.backgroundImage = 'url(../public/assets/Mute.svg)';
+        muteButton.style.backgroundImage = 'url(../public/assets/header-main/Mute.svg)';
         isMuted = false;
     } else {
         video.src = video.src.replace('mute=0', 'mute=1');
-        muteButton.style.backgroundImage = 'url(../public/assets/Unmuted.svg)';
+        muteButton.style.backgroundImage = 'url(../public/assets/header-main/Unmuted.svg)';
         isMuted = true;
     }
 });
@@ -94,7 +94,7 @@ tools.forEach(tool => {
     let offsetX, offsetY;
 
     tool.addEventListener('mousedown', e => {
-        if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea' || e.target.tagName.toLowerCase() === 'select') {
+        if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea' || e.target.tagName.toLowerCase() === 'select' || e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a') {
             // Se o clique foi em um input ou textarea, não inicie o arrastar
             return;
         }
@@ -168,9 +168,10 @@ lo_fiButton.addEventListener('click', () => {
 
 mindfulnessButton.addEventListener('click', () => {
     if (isTool2Minimized) {
-        tool2.style.width = '300px';
-        tool2.style.height = '200px';
+        tool2.style.width = '99.6%';
+        tool2.style.height = '98.6%';
         tool2.style.border = '1px solid #CCC';
+        tool2.style.display = 'flex';
         isTool2Minimized = false;
         mindfulnessButton.classList.add('active-button');
     } else {
@@ -201,7 +202,7 @@ calendarButton.addEventListener('click', () => {
 pomodoroButton.addEventListener('click', () => {
     if (isTool4Minimized) {
         tool4.style.width = '300px';
-        tool4.style.height = '200px';
+        tool4.style.height = '155px';
         tool4.style.border = '1px solid #CCC';
         isTool4Minimized = false;
         pomodoroButton.classList.add('active-button');
@@ -263,7 +264,7 @@ document.getElementById('reset').addEventListener('click', function() {
 spotifyButton.addEventListener('click', () => {
     if (isTool5Minimized) {
         tool5.style.width = '300px';
-        tool5.style.height = '200px';
+        tool5.style.height = '155px';
         tool5.style.border = '1px solid #CCC';
         isTool5Minimized = false;
         spotifyButton.classList.add('active-button');
