@@ -1,15 +1,14 @@
 <?php
 session_start();
 
-require_once('../action/NotebookCrud.php');
 require_once('../database/connection.php');
+require_once('../action/NotebookCrud.php');
 require_once('../action/procedures.php');
 
 $database = new Connection();
 $db = $database->getConnection();
 $crud = new Crud($db);
 
-//Verificar requisitos de usúario logado
 if(!isset($_SESSION['username']) || $_SESSION['levelAccess'] != 0){
     header("Location: ../public/index.php");
     exit();
@@ -17,7 +16,6 @@ if(!isset($_SESSION['username']) || $_SESSION['levelAccess'] != 0){
 
 $username = $_SESSION['username'];
 
-//Verificar se informações do primeiro acesso já foram fornecidas
 $sql = "SELECT modality FROM users WHERE username = :username";
 $stmt = $db->prepare($sql);
 $stmt->bindValue(':username', $username);
@@ -26,7 +24,6 @@ $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 $firstAccessCompleted = !empty($userData['modality']);
 
-//Outras operações...
 $rows = handleActions($crud);
 $notebooks = fetchNotebooks($db);
 $noteContent = fetchNoteContent($db);

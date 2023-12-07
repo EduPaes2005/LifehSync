@@ -70,15 +70,12 @@ class Accounts{
             if($stmt->rowCount() == 1){
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 if(password_verify($password, $user['password'])){
-                    // Verifica o nível de acesso do usuário
                     if($user['levelAccess'] == 0){
-                        // Usuário normal
                         $_SESSION['username'] = $username;
                         $_SESSION['levelAccess'] = $user['levelAccess'];
                         header("Location: ../view/dashboard.php");
                         exit();
                     } elseif($user['levelAccess'] == 1){
-                        // Administrador
                         $_SESSION['username'] = $username;
                         $_SESSION['levelAccess'] = $user['levelAccess'];
                         header("Location: ../view/ADM_dashboard.php");

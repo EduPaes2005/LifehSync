@@ -258,12 +258,13 @@ form button {
 }
 
 .workspace {
-    top: 39px;
-    right: 1px;
-    width: 94%;
-    height: 94.37%;
+    top: 38.99px;
+    right: 0;
+    width: 94.15%;
+    height: 95.37%;
     overflow: hidden;
     position: absolute;
+    background-color: aliceblue;
 }
 
 #tool1, #tool2, #tool3, #tool4, #tool5, #tool6, #tool7 {

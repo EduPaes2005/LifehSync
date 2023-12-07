@@ -8,7 +8,10 @@
 
     <div class="body">
         <?php foreach ($notebooks as $notebook => $value) : ?>
-            <a class="linkNotebooks" data-id="<?= $value["id_notebook"] ?>" style="background-image: url(<?= $value["cover"] ?>);"></a>
+            <?php
+                $encodedCover = str_replace(' ', '%20', $value["cover"]);
+            ?>
+            <a class="linkNotebooks" data-id="<?= $value["id_notebook"] ?>" style="background-image: url(<?= $encodedCover ?>);"></a>
         <?php endforeach; ?>
     </div>
 
@@ -70,41 +73,22 @@
         <p id="feedback">Feedback <span>⚙️</span></p>
     </div>
 </div>
-<!-- <script>
-    $("#form").submit(function() {
-    event.preventDefault();
 
-    var url = $(this).attr("action");
-    //serializeArray vai pegar todos os campos do array
-    var formData = $(form).serializeArray();
-    console.log(formData);
-    $.post(url, formData).done(function(data) {
-        console.log(data); //resultado do envio para o servidor
-    });
-
-    });
-</script> -->
 <script>
 $(document).ready(function () {
-    // Adiciona um listener para o clique nos links de caderno
     $('.linkNotebooks').on('click', function (e) {
         e.preventDefault();
         
-        // Obtém o ID do caderno do atributo data-id
         var cadernoId = $(this).data('id');
 
-        // Faz uma requisição AJAX para obter os detalhes do caderno
         $.ajax({
             type: 'GET',
             url: '<?php echo $_SERVER['PHP_SELF']; ?>?id_notebook=' + cadernoId,
             success: function (data) {
-                // Atualiza a div notebookSubject com os detalhes do caderno
                 $('#notebookSubject h1').text(data.title);
                 $('#notebookSubject textarea').val(data.content);
 
-                // Exibe a div notebookSubject
                 $('#notebookSubject').show();
-                // Oculta a div Notebook
                 $('#Notebook').hide();
             },
             error: function () {

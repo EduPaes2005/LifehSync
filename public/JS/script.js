@@ -90,12 +90,11 @@ document.querySelector('.toggle-button').addEventListener('click', function() {
 
 tools.forEach(tool => {
     let isDragging = false;
-    let isResizing = false; // Adicionando uma flag para redimensionar, se necessário
+    let isResizing = false;
     let offsetX, offsetY;
 
     tool.addEventListener('mousedown', e => {
         if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea' || e.target.tagName.toLowerCase() === 'select' || e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a') {
-            // Se o clique foi em um input ou textarea, não inicie o arrastar
             return;
         }
 
@@ -107,7 +106,6 @@ tools.forEach(tool => {
 
     tool.addEventListener('touchstart', e => {
         if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea' || e.target.tagName.toLowerCase() === 'select' || e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a') {
-            // Se o toque foi em um input ou textarea, não inicie o arrastar
             return;
         }
 
