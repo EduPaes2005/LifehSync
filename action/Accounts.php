@@ -71,12 +71,16 @@ class Accounts{
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
                 if(password_verify($password, $user['password'])){
                     if($user['levelAccess'] == 0){
+                        $_SESSION['id'] = $user['id'];
                         $_SESSION['username'] = $username;
+                        $_SESSION['imgProfile'] = $user['imgProfile'];
                         $_SESSION['levelAccess'] = $user['levelAccess'];
                         header("Location: ../view/dashboard.php");
                         exit();
                     } elseif($user['levelAccess'] == 1){
+                        $_SESSION['id'] = $user['id'];
                         $_SESSION['username'] = $username;
+                        $_SESSION['imgProfile'] = $user['imgProfile'];
                         $_SESSION['levelAccess'] = $user['levelAccess'];
                         header("Location: ../view/ADM_dashboard.php");
                         exit();

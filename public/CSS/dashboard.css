@@ -84,6 +84,10 @@ button#muteButton {
     background-image: url(../assets/header-main/Mute.svg);
 }
 
+p#greetings {
+    text-transform: capitalize;
+}
+
 button#settingsButton {
     top: -2.3px;
     right: 36px;
@@ -258,13 +262,15 @@ form button {
 }
 
 .workspace {
-    top: 38.99px;
+    top: 38.9px;
     right: 0;
-    width: 94.15%;
-    height: 95.37%;
+    width: 94.193%;
+    bottom: 0;
+    display: flex;
     overflow: hidden;
     position: absolute;
-    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
 }
 
 #tool1, #tool2, #tool3, #tool4, #tool5, #tool6, #tool7 {
@@ -365,8 +371,9 @@ form button {
 }
 
 #tool2 {
+    right: 3px;
     z-index: 1;
-    position: absolute;
+    box-sizing: border-box;
     align-items: center;
     border-radius: 15px;
     pointer-events: none;
@@ -383,13 +390,19 @@ form button {
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    font-family: Feather;
+    font-family: "Feather Bold";
     color: #ffffff;
     transition: all 4s ease-in-out;
 }
 
 #tool3 {
-    /*...*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Calendar {
+    text-align: center;
 }
 
 #tool4 .header{
@@ -439,6 +452,11 @@ button#start, button#pause, button#reset {
     background-size: cover;
     background-color: transparent;
     background-position: center;
+    transition: transform 0.3s;
+}
+
+button#start, button#pause, button#reset:hover {
+    transform: scale(1.1);
 }
 
 button#start {
@@ -514,6 +532,7 @@ button#reset {
 #tool6 .tool-content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 #tool6 .header {
@@ -722,6 +741,12 @@ button#reset {
     filter: brightness(65%);
 }
 
+#tool6 #Notebook .body p#NotebooksCover {
+    text-align: center;
+    font-family: Georgia;
+    white-space-collapse: break-spaces;
+}
+
 #tool6 #create {
     color: #FFF;
     width: 45.833px;
@@ -880,17 +905,19 @@ button#perfil-icon {
     position: absolute;
     border-radius: 50%;
     background-size: cover;
-    background-image: url(../assets/PerfilExample.svg);
+    background-image: url(../assets/Account.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
 
 @media screen and (max-width: 768px) {
+    header p{
+        display: none;
+    }
     .workspace {
-        top: 37px;
+        top: 38px;
         right: 0;
         width: 84.7%;
-        height: 95%;
     }
     .toolbar {
         top: 46px;
@@ -901,14 +928,23 @@ button#perfil-icon {
     #youtube, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #task {
         background-size: 33px;
     }
+    #tool2 {
+        right: 1.6px;
+        z-index: 1;
+        box-sizing: border-box;
+        align-items: center;
+        border-radius: 15px;
+        pointer-events: none;
+        justify-content: center;
+        background-color: #000000eb;
+    }
 }
 
-@media screen and (max-height: 360px) {
+@media screen and (max-height: 480px) {
     .workspace {
         top: 40px;
         right: 0;
         width: 92.38%;
-        height: 88.8%;
     }
     .toolbar {
         top: 43px;

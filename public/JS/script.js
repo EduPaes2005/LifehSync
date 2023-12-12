@@ -164,10 +164,40 @@ lo_fiButton.addEventListener('click', () => {
     }
 });
 
+function embedVideo() {
+    var videoUrl = document.getElementById("videoUrl").value;
+
+    var embedUrl = "https://www.youtube.com/embed/" + getVideoId(videoUrl) + "?version=3&autoplay=1&mute=0&loop=1&playlist=" + getVideoId(videoUrl) + "&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&fs=0&vq=hd2160&cc_load_policy=0&iv_load_policy=3";
+
+    var iframe = document.createElement("iframe");
+    iframe.id = "youtubeVideo";
+    iframe.width = "100%";
+    iframe.height = "100%";
+    iframe.src = embedUrl;
+    iframe.frameborder = "0";
+    iframe.allow = "autoplay; fullscreen; encrypted-media";
+
+    var videoContainer = document.getElementById("videoContainer");
+    videoContainer.innerHTML = "";
+    videoContainer.appendChild(iframe);
+}
+
+function getVideoId(url) {
+    var regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    var match = url.match(regExp);
+
+    if (match && match[1]) {
+        return match[1];
+    } else {
+        alert("URL de vídeo do YouTube Inválida!");
+        return null;
+    }
+}
+
 mindfulnessButton.addEventListener('click', () => {
     if (isTool2Minimized) {
         tool2.style.width = '99.6%';
-        tool2.style.height = '98.6%';
+        tool2.style.height = '99.5%';
         tool2.style.border = '1px solid #CCC';
         tool2.style.display = 'flex';
         isTool2Minimized = false;
@@ -243,11 +273,11 @@ document.getElementById('pause').addEventListener('click', function() {
     if (timerRunning) {
         clearInterval(intervalId);
         timerRunning = false;
-        document.getElementById('pause').textContent = 'Despausar';
+        // document.getElementById('pause').textContent = 'Despausar';
     } else {
         timerRunning = true;
         startTimer();
-        document.getElementById('pause').textContent = 'Pausar';
+        // document.getElementById('pause').textContent = 'Pausar';
     }
 });
 
@@ -290,6 +320,24 @@ notebookButton.addEventListener('click', () => {
         notebookButton.classList.remove('active-button');
     }
 });
+
+function showNotebook() {
+    document.getElementById('Notebook').style.display = 'flex';
+    document.getElementById('addNotebook').style.display = 'none';
+    document.getElementById('notebookSubject').style.display = 'none';
+}
+
+function showAddNotebook() {
+    document.getElementById('Notebook').style.display = 'none';
+    document.getElementById('addNotebook').style.display = 'flex';
+    document.getElementById('notebookSubject').style.display = 'none';
+}
+
+function showNotebookSubject() {
+    document.getElementById('Notebook').style.display = 'none';
+    document.getElementById('addNotebook').style.display = 'none';
+    document.getElementById('notebookSubject').style.display = 'flex';
+}
 
 taskButton.addEventListener('click', () => {
     if (isTool7Minimized) {

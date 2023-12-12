@@ -13,6 +13,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
 
     if($accounts->login($username, $password)){
+        
         $_SESSION['username'] = $username;
         header("Location: ../view/dashboard.php");
         exit();
@@ -42,25 +43,19 @@ if(isset($_POST['login'])){
 <?php include '../view/components/header.php'; ?>
 
 <main>
-    <div class="login-container">
-        <form id="form-login" method="POST">
-            <h2>Entrar</h2>
+    <form id="form-login" method="POST">
+        <h2>Entrar</h2>
 
-            <div class="name-field">
-                <label for="username">Nome de usuário</label>
-                <input type="text" name="username" placeholder="Coloque seu nome" required>
-            </div>
+            <label for="username">Nome de usuário</label><br>
+            <input type="text" name="username" placeholder="Coloque seu nome" required><br>
 
-            <div class="pass-field">
-                <label for="password">Senha</label>
-                <input type="password" name="password" placeholder="Coloque sua senha" required>
-            </div>
+            <label for="password">Senha</label><br>
+            <input type="password" name="password" placeholder="Coloque sua senha" required><br>
 
-            <button id="btn-register" type="submit" name="login" >LOGAR</button>
-        </form>
-        
-        <a href="../view/register.php" id="register-link">Não tem uma conta? <span>Cadastre-se aqui</span></a>
-    </div>
+        <button id="btn-register" type="submit" name="login">LOGAR</button><br>
+    </form>
+
+    <a href="../view/register.php" id="register-link">Não tem uma conta? <span>Cadastre-se aqui</span></a>
 
     <div class="or-container">
         <div class="left-line"></div>
@@ -69,13 +64,13 @@ if(isset($_POST['login'])){
     </div>
 
     <div class="digitalmedia-container">
-        <button id="google"></button>
-        <button id="facebook"></button>
-        <button id="twitter"></button>
+        <button id="google" onclick="showSocialLoginAlert('Google')"></button>
+        <button id="facebook" onclick="showSocialLoginAlert('Facebook')"></button>
+        <button id="twitter" onclick="showSocialLoginAlert('Twitter')"></button>
     </div>
 
     <div class="rectangle-container">
-        <img id="img-slogan" src="assets/login&register/slogan.svg">
+        <img id="img-slogan" src="assets/login&amp;register/slogan.svg">
 
         <div class="paragrapho">
             <p id="term-privacy1">Ao entrar no LifehSync, você concorda com os nossos <span>Termos</span> e <span>Política de Privacidade</span>.</p>
@@ -87,5 +82,10 @@ if(isset($_POST['login'])){
 <!--Rodapé-->
 <?php include '../view/components/footer.php'; ?>
 
+<script>
+    function showSocialLoginAlert(socialPlatform) {
+        alert('Login Social em Desenvolvimento! - ' + socialPlatform);
+    }
+</script>
 </body>
 </html>

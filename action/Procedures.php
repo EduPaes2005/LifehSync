@@ -1,5 +1,28 @@
 <?php
-function handleActions($crud) {
+
+function checkCredentials() {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (!isset($_SESSION['username']) || $_SESSION['levelAccess'] != 0) {
+        header("Location: ../public/index.php");
+        exit();
+    }
+}
+
+function checkFirstAccess($db, $username){
+    $sql = "SELECT modality FROM users WHERE username = :username";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':username', $username);
+    $stmt->execute();
+
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return !empty($userData['modality']);
+}
+
+function handleActions($crud){
     if(isset($_GET['action'])){
         switch($_GET['action']){
             case 'create':
@@ -34,13 +57,17 @@ function handleActions($crud) {
     return $rows;
 }
 
-function fetchNotebooks($db) {
+function fetchNotebooks($db){
+    $id_users = $_SESSION['id'];
     $notebooks = [];
-    $query = "SELECT * FROM notebooks";
-    $result = $db->query($query);
 
-    if ($result->rowCount() > 0){
-        while ($row = $result->fetch(PDO::FETCH_ASSOC)){
+    $sql = "SELECT * FROM notebooks WHERE id_users = :id_users";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':id_users', $id_users);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0){
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             $notebooks[] = $row;
         }
     }
@@ -48,7 +75,7 @@ function fetchNotebooks($db) {
     return $notebooks;
 }
 
-function fetchNoteContent($db) {
+function fetchNoteContent($db){
     $noteContent = null;
 
     if (isset($_GET['id_notebook'])) {
@@ -70,7 +97,7 @@ function fetchNoteContent($db) {
     return $noteContent;
 }
 
-function handleAjaxRequest($noteContent) {
+function handleAjaxRequest($noteContent){
     if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
         header('Content-Type: application/json');
         echo json_encode($noteContent);

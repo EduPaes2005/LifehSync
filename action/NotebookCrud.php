@@ -13,7 +13,8 @@ class Crud{
 
     public function create($postValue){
         $title = $postValue['title'];
-
+        $idUser = $postValue['idUser'];
+        
         if(isset($_FILES['cover'])){
             $file = $_FILES['cover'];
             $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
@@ -23,16 +24,18 @@ class Crud{
                 $roadFile = '../public/assets/notebooks/' . $file['name'];
                 move_uploaded_file($file['tmp_name'], $roadFile);
             } else {
-                die('O tipo de imagem não é aceito!');
+                print "<script> alert('O tipo de imagem não é aceito!'); </script>";
+                return false;
             }
         } else {
             $roadFile = '';
         }
 
-        $query = "INSERT INTO " . $this->table_name . " (title, cover) VALUES (?, ?)";
+        $query = "INSERT INTO " . $this->table_name . " (title, id_users, cover) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1,$title);
-        $stmt->bindParam(2,$roadFile);
+        $stmt->bindParam(2,$idUser);
+        $stmt->bindParam(3,$roadFile);
 
         $rows = $this->read();
         if($stmt->execute()){

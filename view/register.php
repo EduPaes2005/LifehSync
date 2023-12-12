@@ -40,31 +40,25 @@
 <?php include 'components/header.php'; ?>
 
 <main>
-    <div id="register-container">
-        <form id="form-register" method="POST">
-            <h2>Crie seu Perfil</h2>
+    <form id="form-register" method="POST">
+        <h2>Crie seu Perfil</h2>
 
-            <div class="name-field">
-                <label for="username">Nome de usuário</label>
-                <input type="text" name="username" placeholder="Coloque seu nome" required>
-            </div>
+        <label for="username">Nome de usuário</label><br>
+        <input type="text" name="username" placeholder="Coloque seu nome" required><br>
 
-            <div class="email-field">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Coloque seu e-mail" required>
-            </div>
+        <label for="email">E-mail</label><br>
+        <input type="email" name="email" placeholder="Coloque seu e-mail" required><br>
 
-            <div class="pass-field">
-                <label for="password">Senha</label>
-                <input type="password" name="password" placeholder="Coloque sua senha" required>
-            </div>
+        <label for="password">Senha</label><br>
+        <input type="password" name="password" placeholder="Coloque sua senha" required><br id="space">
 
-            <div class="confpass-field">
-                <label for="confpassword">Confirmar senha</label>
-                <input type="password" name="confpassword" placeholder="Confirme sua senha" required>
-            </div>
-        </form>
-    </div>
+        <label for="confpassword" id="labelconfpw">Confirmar senha</label><br>
+        <input type="password" id="confpassword" name="confpassword" placeholder="Confirme sua senha" required><br>
+
+        <button id="btn-register-pocket" type="submit" name="register" form="form-register">CADASTRAR</button>
+    </form>
+
+    <a href="../public/index.php" id="index-link-pocket">Voltar para o login</a>
 
     <img id="object-1" src="../public/assets/login&register/object-1.svg">
     <img id="object-2" src="../public/assets/login&register/object-2.svg">
@@ -72,15 +66,19 @@
     <img id="object-4" src="../public/assets/login&register/object-4.svg">
     <img id="object-5" src="../public/assets/login&register/object-5.svg">
 
-    <div class="lnormal-line"></div>
-    <p id="or">OU</p>
-    <div class="rnormal-line"></div>
+    <div class="or-container">
+        <div class="left-line"></div>
+        <p id="or">OU</p>
+        <div class="right-line"></div>
+    </div>
 
-    <button id="google"></button>
-    <button id="facebook"></button>
-    <button id="twitter"></button>
+    <div class="digitalmedia-container">
+        <button id="google"></button>
+        <button id="facebook"></button>
+        <button id="twitter"></button>
+    </div>
 
-    <div id="rectangle-container">
+    <div class="rectangle-container">
         <img id="img-slogan" src="../public/assets/login&register/slogan.svg">
 
         <button id="btn-register" type="submit" name="register" form="form-register">CADASTRAR</button>
