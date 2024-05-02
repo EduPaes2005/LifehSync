@@ -1,0 +1,1990 @@
+:root {
+    --dark-color-text: #FFF; 
+    --light-color-text: #000;
+    --dark-background-color: #131E22F2;
+    --light-background-color: #FFFDF6B8;
+    --dark-background-color-toolbar: #131E22E0;
+    --light-background-color-toolbar: #D1D1D1B3;
+    --dark-background-color-toolbar-item: #555;
+    --light-background-color-toolbar-item: #C3C3C3;
+    --dark-background-color-toolbar-active: #949494;
+    --light-background-color-toolbar-active: #D4D4D4;
+    --light-border-tools: 1px solid #FFF;
+    --dark-tool6-border: 1.4px solid #515151;
+    --light-tool6-border: 1.4px solid #1C1C1C;
+    --light-tool6-border-link: 0.1px solid #1C1C1C;
+    --dark-hr-border: 1.5px solid #FFF;
+    --light-hr-border: 1.5px solid #1C1C1C;
+    --dark-background-color-tool: #333333F7;
+    --light-background-color-tool: #CBCBCBD1;
+    --light-color-text-PMD: #1C1C1C;
+    --light-text-shadow-PMD: 0;
+    --light-tool6-input: #EFEFEF;
+    --dark-ferramentabar: #131E22;
+    --light-ferramentabar: #CBCAC5FC;
+}
+
+body {
+    color: var(--dark-color-text);
+    cursor: url(../assets/Cursor1.svg), auto;
+    overflow: hidden;
+    font-family: "Feather Bold";
+    /* font-family: "Feather"; */
+    transition: background-color 0.5s, color 0.5s;
+    /* background-size: cover;
+    background-image: url(../assets/login&register/Background\ -\ Register.svg); -- Ative quando não houver internet*/
+}
+
+body.light-mode {
+    color: var(--light-color-text);
+    cursor: url(../assets/Cursor1.svg), auto;
+    overflow: hidden;
+    font-family: "Feather Bold";
+    /* font-family: "Feather"; */
+}
+
+.background-video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    pointer-events: none;
+}
+
+#youtubeVideo {
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw;
+    position: absolute;
+    min-width: 177.78vh;
+    transform: translate(-50%, -50%);
+    min-height: 100vh;
+}
+
+header {
+    z-index: 1;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 2px 15px #000;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--dark-background-color);
+}
+
+body.light-mode header {
+    z-index: 1;
+    display: flex;
+    position: relative;
+    box-shadow: 0px 2px 15px #000;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--light-background-color);
+}
+
+header h1:hover {
+    transform: scale(1.1);
+}
+
+header p {
+    width: fit-content;
+    inset: 9px 0 0 80px;
+    height: fit-content;
+    position: absolute;
+}
+
+.buttons {
+    inset: 6.4px;
+    position: absolute;
+}
+
+.buttons button {
+    padding: 15px;
+    position: absolute;
+    background-size: cover;
+    background-color: #5550;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button#homeButton {
+    top: -2px;
+    left: -3px;
+    position: absolute;
+    background-size: 27px;
+    background-image: url(../assets/header-main/Home.svg);
+}
+
+button#homeButton a {
+    top: 2px;
+    left: 2px;
+    width: 27px;
+    height: 28px;
+    z-index: 1;
+    position: absolute;
+}
+
+button#muteButton {
+    top: -2px;
+    left: 35px;
+    position: absolute;
+    background-image: url(../assets/header-main/Mute.svg);
+}
+
+p#greetings {
+    text-transform: capitalize;
+}
+
+button#shareButton {
+    top: -2.3px;
+    left: 70px;
+    position: absolute;
+    background-size: 28.3px;
+    background-image: url(../assets/header-main/Share.svg);
+}
+
+button#weatherButton {
+    top: -6.3px;
+    right: 118px;
+    padding: 18px;
+    position: absolute;
+    background-size: 34.5px;
+    background-image: url(../assets/header-main/Cloudy-Night.png);
+}
+
+div#weatherTime {
+    position: absolute;
+    right: 192px;
+}
+
+p#weather {
+    top: 2px;
+    font-size: 18px;
+}
+
+button#settingsButton {
+    top: -2.3px;
+    right: 36px;
+    position: absolute;
+    background-image: url(../assets/header-main/Enginner.svg);
+}
+
+button#fullscreenButton {
+    top: -2.08px;
+    right: -2px;
+    position: absolute;
+    background-image: url(../assets/header-main/Fullscreen.svg);
+}
+
+header h1 {
+    margin: 4.7px 0;
+    font-size: 23px;
+    letter-spacing: 0.46px;
+}
+
+.rainbow-line {
+    width: 100%;
+    height: 0.6px;
+    background-size: 50% 100%;
+    background-image: linear-gradient(90deg, #00B010, #00B010, #0EC6E8, #0050C0, #0050C0, #8C58A3, #8C58A3, #F7421E, #FF0000, #F7421E, #8C58A3, #8C58A3, #0050C0, #0050C0, #0EC6E8,#00B010, #00B010);
+    animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.container {
+    z-index: 1;
+    position: relative;
+}
+
+.ferramentabar {
+    height: 0;
+    background-color: var(--dark-ferramentabar);
+    position: absolute;
+    top: 31.5px;
+    right: 35.8px;
+    overflow: hidden;
+    transition: height 0.3s;
+    width: 29.5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+body.light-mode .ferramentabar {
+    height: 0;
+    background-color: var(--light-ferramentabar);
+    position: absolute;
+    top: 31.5px;
+    right: 35.8px;
+    overflow: hidden;
+    transition: height 0.3s;
+    width: 29.5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+button#lang-toggle {
+    background-size: 23px;
+    background-image: url(../assets/header-main/World.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+#lang-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.light-mode button#lang-toggle {
+    background-size: 23px;
+    background-image: url(../assets/header-main/World.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+button#theme-toggle {
+    margin-top: 28px;
+    background-size: 24px;
+    background-image: url(../assets/header-main/Sun.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.light-mode button#theme-toggle {
+    margin-top: 28px;
+    background-size: 21px;
+    background-image: url(../assets/header-main/Moon.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+button#socialMedia-toggle {
+    margin-top: 57px;
+    background-size: 24px;
+    background-image: url(../assets/header-main/Social-Media.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+#socialMedia-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.light-mode button#socialMedia-toggle {
+    margin-top: 57px;
+    background-size: 24px;
+    background-image: url(../assets/header-main/Social-Media.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+button#help-toggle {
+    margin-top: 85px;
+    background-size: 23px;
+    background-image: url(../assets/header-main/Help.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+#help-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.light-mode button#help-toggle {
+    margin-top: 85px;
+    background-size: 23px;
+    background-image: url(../assets/header-main/Help.png);
+    transition: background-image 1s;
+    transition: transform 0.3s;
+}
+
+.notif {
+    top: 36px;
+    right: 0px;
+    margin: 10px;
+    padding: 10px;
+    position: absolute;
+    background: #131E22D1;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    width: 300px;
+    height: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    text-align: center;
+    transform: translateX(20px);
+    animation: fade-in 10s ease forwards;
+}
+
+body.light-mode .notif {
+    top: 36px;
+    right: 0px;
+    margin: 10px;
+    padding: 10px;
+    position: absolute;
+    background: var(--light-background-color);
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    width: 300px;
+    height: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    text-align: center;
+    transform: translateX(20px);
+    animation: fade-in 10s ease forwards;
+}
+
+.welcome_text {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Feather Bold;
+    /* font-family: Feather; */
+}
+
+.loader {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: rgb(68, 5, 242);
+    animation: load 10s ease forwards;
+}
+
+@keyframes fade-in {
+    5%,
+    90% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes load {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.first-access-form {
+    width: fit-content;
+    height: fit-content;
+    margin: 5px auto;
+    border: 1.5px solid #26253CA6;
+    padding: 15px;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #0D0D0D8C;
+}
+
+h3 {
+    margin: 0 0 15px 0;
+    font-size: larger;
+    text-shadow: 1px 2px 3px #000;
+}
+
+label {
+    font-size: 16px;
+    font-family: Georgia;
+    text-shadow: 1.3px 1px 3px #000;
+}
+
+.modality-field select {
+    width: 131px;
+    border: 2px solid #E7E6E6;
+    height: 36px;
+    background: #FFFFB3;
+    box-shadow: 3px 5px 9px 0px #00000073;
+    box-sizing: border-box;
+    padding: 0 0 0 25px;
+    border-radius: 15px;
+}
+
+form button {
+    margin: 15px 0 0 0;
+    padding: 4px 8px 4px 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #F94B63;
+}
+
+.toolbar {
+    top: 47px;
+    left: 4.5px;
+    width: 3.5%;
+    bottom: 8px;
+    border: 1px solid #FFF;
+    padding: 10px;
+    display: flex;
+    position: fixed;
+    flex-wrap: nowrap;
+    border-radius: 7px;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--dark-background-color-toolbar);
+}
+
+body.light-mode .toolbar {
+    top: 47px;
+    left: 4.5px;
+    width: 3.5%;
+    bottom: 8px;
+    border: 1px solid #FFF;
+    padding: 10px;
+    display: flex;
+    position: fixed;
+    flex-wrap: nowrap;
+    border-radius: 7px;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: var(--light-background-color-toolbar);
+}
+
+.toolbar-item {
+    color: white;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    padding: 21px;
+    border-radius: 7px;
+    background-color: var(--dark-background-color-toolbar-item);
+}
+
+body.light-mode .toolbar-item {
+    color: white;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    padding: 21px;
+    border-radius: 7px;
+    background-color: var(--light-background-color-toolbar-item);
+}
+
+.toolbar-item {
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+.toolbar-item:hover {
+    transform: scale(1.1);
+}
+
+#youtube {
+    background-image: url(../assets/toolbar/Youtube.svg);
+}
+
+#mindfulness {
+    background-image: url(../assets/toolbar/Mindfulness.svg);
+}
+
+#calendar {
+    background-image: url(../assets/toolbar/Calendar.svg);
+}
+
+#pomodoro {
+    background-image: url(../assets/toolbar/Pomodoro.svg);
+}
+
+#spotify {
+    background-image: url(../assets/toolbar/Spotify.svg);
+}
+
+#notebook {
+    background-image: url(../assets/toolbar/Notebook.svg);
+}
+
+#notepad {
+    background-image: url(../assets/toolbar/Nots.svg);
+}
+
+#youtube.active-button, #mindfulness.active-button, #calendar.active-button, #pomodoro.active-button, #spotify.active-button, #notebook.active-button, #notepad.active-button {
+    border: 2px solid #FFF;
+    transform: scale(1.15);
+    transition: transform 0.5s, background-color 0.5s ease;
+    background-color: var(--dark-background-color-toolbar-active);
+}
+
+body.light-mode #youtube.active-button {
+    border: 2px solid #FFF;
+    transform: scale(1.15);
+    transition: transform 0.5s, background-color 0.5s ease;
+    background-color: var(--light-background-color-toolbar-active);
+}
+
+body.light-mode #minfulness.active-button {
+    background-color: var(--light-background-color-toolbar-active);
+}
+
+body.light-mode #calendar.active-button {
+    background-color: var(--light-background-color-toolbar-active);
+}
+
+body.light-mode #pomodoro.active-button {
+    background-color: var(--light-background-color-toolbar-active);
+}
+
+body.light-mode #spotify.active-button {
+    background-color: var(--light-background-color-toolbar-active);
+}
+
+body.light-mode #notebook.active-button {
+    background-color: var(--light-background-color-toolbar-active);
+}
+
+body.light-mode #notepad.active-button {
+    background-color: var(--light-background-color-toolbar-active);
+}
+
+.workspace {
+    top: 38.9px;
+    right: 0;
+    width: 94.193%;
+    bottom: 0;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+#tool1, #tool2, #tool3, #tool4, #tool5, #tool6, #tool7 {
+    width: 0px;
+    height: 0px;
+    cursor: move;
+    border: none;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 16px;
+    background-color: var(--dark-background-color-tool);
+}
+
+body.light-mode #tool1, #tool2 {
+    width: 0px;
+    height: 0px;
+    cursor: move;
+    border: none;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 16px;
+    background-color: var(--light-background-color-tool);
+}
+
+body.light-mode #tool3 {
+    background-color: var(--light-background-color-tool);
+}
+
+body.light-mode #tool4 {
+    background-color: var(--light-background-color-tool);
+}
+
+body.light-mode #tool5 {
+    background-color: var(--light-background-color-tool);
+}
+
+body.light-mode #tool6 {
+    background-color: var(--light-background-color-tool);
+}
+
+body.light-mode #tool7 {
+    background-color: var(--light-background-color-tool);
+}
+
+.tool-content {
+    padding: 0px;
+}
+
+#tool1 .header {
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool1 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool1 #minimize-iconYT {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool1 hr {
+    width: 9px;
+    border: var(--dark-hr-border);
+}
+
+body.light-mode #tool1 hr {
+    width: 9px;
+    border: var(--light-hr-border);
+}
+
+#tool1 .body {
+    margin: 7px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tool1 label {
+    margin: 25.1px 0 3.86px 0;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    text-shadow: none;
+    letter-spacing: 0.22px;
+}
+
+#tool1 input#videoUrl {
+    margin: 0 0 -3px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    width: 153.67px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#tool1 input#videoUrl::placeholder {
+    color: #4C5053;
+    font-size: 9.9px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.18px;
+}
+
+#tool1 button#btnYoutube {
+    inset: 3.35px 0 0 0;
+    position: relative;
+}
+
+#tool1 button#btnYoutube {
+    color: #4C5053;
+    width: 164.67px;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    padding: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.3px;
+    background-color: #FFF;
+}
+
+body.light-mode #tool1 button#btnYoutube {
+    color: var(--light-color-text);
+}
+
+#tool2 {
+    right: 3px;
+    z-index: 1;
+    box-sizing: border-box;
+    align-items: center;
+    border-radius: 15px;
+    pointer-events: none;
+    justify-content: center;
+    background-color: #000000eb;
+}
+
+#tool2 #circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #F14507;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: "Feather Bold";
+    font-family: "Feather";
+    color: #ffffff;
+    transition: all 4s ease-in-out;
+}
+
+#tool3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calendarText {
+    text-align: center;
+}
+
+#tool4 .header{
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool4 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool4 button#minimize-iconPMD {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool4 hr {
+    width: 9px;
+    border: var(--dark-hr-border);
+}
+
+body.light-mode #tool4 hr {
+    width: 9px;
+    border: var(--light-hr-border);
+}
+
+#tool4 .body {
+    margin: 5px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#timer {
+    font-size: 48px;
+    text-shadow: 1px 1px 6px #000;
+}
+
+body.light-mode div#timer {
+    color: var(--light-color-text-PMD);
+    text-shadow: var(--light-text-shadow-PMD);
+}
+
+button#start, button#pause, button#reset {
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-color: transparent;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+body.light-mode div#buttons {
+    filter: invert(1);
+}
+
+button#start:hover, button#pause:hover, button#reset:hover {
+    transform: scale(1.1);
+}
+
+button#start {
+    background-image: url(../assets/pomodoro/Play.svg);
+}
+
+button#pause {
+    background-image: url(../assets/pomodoro/Pause.svg);
+}
+
+button#reset {
+    background-image: url(../assets/pomodoro/Reset.svg);
+}
+
+.tool-content button {
+    margin: 5px;
+}
+
+#tool5 .tool-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#tool5 .header {
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool5 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool5 #minimize-iconSPT {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool5 hr {
+    width: 9px;
+    border: var(--dark-hr-border);
+}
+
+body.light-mode #tool5 hr {
+    width: 9px;
+    border: var(--light-hr-border);
+}
+
+#tool5 button {
+    font-family: Feather Bold;
+    /* font-family: Feather; */
+    background-color: transparent;
+}
+
+#tool5 a {
+    color: var(--dark-color-text);
+    text-align: center;
+}
+
+body.light-mode #tool5 a {
+    color: var(--light-color-text);
+    text-align: center;
+}
+
+#tool5 .body {
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+#tool6 {
+    display: grid;
+}
+
+#tool6 .tool-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#tool6 .header {
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool6 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool6 #Notebook .header #btnUpdateNotebook {
+    right: 75.5px;
+    padding: 12px;
+    position: absolute;
+    background-size: 17.5px;
+    background-color: transparent;
+    background-image: url(../assets/notebooks/Edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+body.light-mode #tool6 #Notebook .header #btnUpdateNotebook {
+    right: 75.5px;
+    filter: invert(1);
+    padding: 12px;
+    position: absolute;
+    background-size: 17.5px;
+    background-color: transparent;
+    background-image: url(../assets/notebooks/Edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+#tool6 #Notebook .header #btnUpdateNotebook.active-button {
+    right: 75.5px;
+    border: 1.9px solid white;
+    padding: 12px;
+    position: absolute;
+    border-radius: 2.5px;
+    background-size: 17.5px;
+    background-color: #4a4a4b;
+    background-image: url(../assets/notebooks/Edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.15);
+    transition: transform 0.5s, background-color 0.5s ease;
+}
+
+body.light-mode #tool6 #Notebook .header #btnUpdateNotebook.active-button {
+    filter: invert(1);
+    right: 75.5px;
+    border: 1.9px solid rgb(0, 0, 0);
+    padding: 12px;
+    position: absolute;
+    border-radius: 2.5px;
+    background-size: 17.5px;
+    background-color: #4a4a4b;
+    background-image: url(../assets/notebooks/Edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.15);
+    transition: transform 0.5s, background-color 0.5s ease;
+}
+
+#tool6 #back {
+    color: var(--dark-color-text);
+    width: 45.833px;
+    height: 27.7px;
+    border: var(--dark-tool6-border);
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    right: 24px;
+    position: absolute;
+    background-color: transparent;
+}
+
+body.light-mode #tool6 #back {
+    color: var(--light-color-text);
+    width: 45.833px;
+    height: 27.7px;
+    border: var(--light-tool6-border);
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    right: 24px;
+    position: absolute;
+    background-color: transparent;
+}
+
+#tool6 #backContent {
+    color: var(--dark-color-text);
+    width: 45.833px;
+    height: 27.7px;
+    border: var(--dark-tool6-border);
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    right: 24px;
+    position: absolute;
+    background-color: transparent;
+}
+
+body.light-mode #tool6 #backContent {
+    color: var(--light-color-text);
+    width: 45.833px;
+    height: 27.7px;
+    border: var(--light-tool6-border);
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    right: 24px;
+    position: absolute;
+    background-color: transparent;
+}
+
+#tool6 #minimize-iconNB, #minimize-icon2NB, #minimize-icon3NB, #minimize-icon4NB {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool6 hr {
+    width: 9px;
+    border: var(--dark-hr-border);
+}
+
+body.light-mode #tool6 hr {
+    width: 9px;
+    border: var(--light-hr-border);
+}
+
+#tool6 ::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: transparent;
+}
+
+#tool6 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--dark-color-text);
+}
+
+body.light-mode #tool6 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--light-color-text);
+}
+
+#tool6 #addNotebook {
+    display: none;
+}
+
+#tool6 #addNotebook .header button#back {
+    right: 24px;
+    position: absolute;
+}
+
+#tool6 #addNotebook form#formCreate {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    justify-content: center;
+}
+
+#tool6 form#form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    justify-content: center;
+}
+
+#tool6 h2 {
+    color: var(--dark-color-text);
+    inset: -73.5px 0 0 0;
+    height: fit-content;
+    margin: 0;
+    position: relative;
+    font-size: 17px;
+    text-align: center;
+    font-family: Feather Bold;
+    /* font-family: Feather; */
+    letter-spacing: 0.34px;
+}
+
+body.light-mode #tool6 h2 {
+    color: var(--light-color-text);
+    inset: -73.5px 0 0 0;
+    height: fit-content;
+    margin: 0;
+    position: relative;
+    font-size: 17px;
+    text-align: center;
+    font-family: Feather Bold;
+    /* font-family: Feather; */
+    letter-spacing: 0.34px;
+}
+
+#tool6 label {
+    margin: 25.1px 0 3.86px 6px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    text-shadow: none;
+    letter-spacing: 0.22px;
+}
+
+#tool6 input#title {
+    margin: 0 0 -3px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+body.light-mode #tool6 input#title {
+    margin: 0 0 -3px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 7px;
+    background-color: var(--light-tool6-input);
+}
+
+#tool6 input#title::placeholder {
+    color: #4C5053;
+    padding: 0 0 0 13px;
+    font-size: 9.9px;
+    font-weight: 500;
+    letter-spacing: 0.18px;
+}
+
+#tool6 .inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 28px 0;
+}
+
+#tool6 select#cor {
+    color: #4C5053;
+    width: 134.6px;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    font-size: 9.7px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    background-color: #D9D9D9;
+}
+
+body.light-mode #tool6 select#cor {
+    background-color: var(--light-tool6-input);
+}
+
+#tool6 .containerFileInput {
+    height: 28.7px;
+}
+
+#tool6 .labelFileInput {
+    color: #4C5053;
+    border: 1.5px solid #515151;
+    cursor: pointer;
+    padding: 7.7px 30.7px;
+    font-size: 9.7px;
+    font-family: Arial;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+body.light-mode #tool6 .labelFileInput {
+    background-color: var(--light-tool6-input);
+}
+
+#tool6 input#cover {
+    top: -41px;
+    left: 1px;
+    width: 134.6px;
+    height: 27px;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+    font-size: 0;
+    border-radius: 7px;
+}
+
+#tool6 #updateNotebook input#cover {
+    top: 0;
+    left: 0;
+    color: #4C5053;
+    border: 1.5px solid #515151;
+    width: 134.6px;
+    height: 27px;
+    cursor: pointer;
+    opacity: unset;
+    position: relative;
+    font-size: 9.7px;
+    text-align: center;
+    font-family: Arial;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#tool6 #updateNotebook button#btnUpNotebook {
+    inset: 2.35px 0 0 0;
+    position: relative;
+}
+
+#tool6 #updateNotebook button#btnUpNotebook {
+    color: #4C5053;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.3px;
+    background-color: #FFF;
+}
+
+#tool6 button#btn {
+    inset: 2.35px 0 0 0;
+    position: relative;
+}
+
+#tool6 button#btn {
+    color: #4C5053;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.3px;
+    background-color: #FFF;
+}
+
+.tool6 {
+    position: relative;
+}
+
+#tool6 #Notebook {
+    position: relative;
+}
+
+#tool6 #Notebook .body {
+    overflow: auto;
+    padding: 17px 11.5px 9px 17px;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 441px;
+    margin: 1px 2px 0 2px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#tool6 #Notebook .linkNotebooks {
+    width: 115px;
+    height: 167.63px;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 17px;
+    background-size: cover;
+    justify-content: center;
+    background-color: #FFF;
+    background-position: center;
+    transition: filter 0.3s ease; 
+}
+
+body.light-mode #tool6 #Notebook .linkNotebooks {
+    width: 115px;
+    height: 167.63px;
+    cursor: pointer;
+    border: var(--light-tool6-border-link);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 17px;
+    background-size: cover;
+    justify-content: center;
+    background-color: #FFF;
+    background-position: center;
+    transition: filter 0.3s ease; 
+}
+
+#tool6 #Notebook .linkNotebooks:hover {
+    filter: brightness(65%);
+}
+
+#tool6 #Notebook .linkNotebooks:hover .titleCover {
+    display: block;
+    transition: transform 0.3s; 
+}
+
+.titleCover {
+    display: none;
+    color: white;
+    font-size: larger;
+    text-align: center;
+    font-family: 'Feather';
+    -webkit-text-stroke-width: thick;
+    -webkit-text-stroke-color: black;
+    text-shadow: -0.5px 0px 10px black;
+}
+
+#tool6 #Notebook .body p#NotebooksCover {
+    text-align: center;
+    font-family: Georgia;
+    white-space-collapse: break-spaces;
+}
+
+#tool6 #create {
+    color: var(--dark-color-text);
+    width: 45.833px;
+    height: 27.7px;
+    border: var(--dark-tool6-border);
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    right: 24px;
+    position: absolute;
+    background-color: transparent;
+}
+
+body.light-mode #tool6 #create {
+    color: var(--light-color-text);
+    width: 45.833px;
+    height: 27.7px;
+    border: var(--light-tool6-border);
+    cursor: pointer;
+    font-size: 9.5px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.2px;
+    right: 24px;
+    position: absolute;
+    background-color: transparent;
+}
+
+#tool6 #Notebook .footer #deleteNotebook {
+    right: 3px;
+    bottom: 1px;
+    padding: 12px;
+    position: absolute;
+    background-size: 18.5px;
+    background-color: transparent;
+    background-image: url(../assets/notebooks/Trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body.light-mode #tool6 #Notebook .footer #deleteNotebook {
+    right: 3px;
+    filter: invert(1);
+    bottom: 1px;
+    padding: 12px;
+    position: absolute;
+    background-size: 18.5px;
+    background-color: transparent;
+    background-image: url(../assets/notebooks/Trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#tool6 #Notebook .footer #deleteNotebook.active-button {
+    right: 3px;
+    border: 1.9px solid white;
+    bottom: 1px;
+    padding: 12px;
+    padding: 12px;
+    position: absolute;
+    border-radius: 2.5px;
+    background-size: 18.5px;
+    background-color: #4a4a4b;
+    background-image: url(../assets/notebooks/Trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.15);
+    transition: transform 0.5s, background-color 0.5s ease;
+}
+
+body.light-mode #tool6 #Notebook .footer #deleteNotebook.active-button {
+    filter: invert(1);
+    right: 3px;
+    border: 1.9px solid black;
+    bottom: 1px;
+    padding: 12px;
+    padding: 12px;
+    position: absolute;
+    border-radius: 2.5px;
+    background-size: 18.5px;
+    background-color: #4a4a4b;
+    background-image: url(../assets/notebooks/Trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.15);
+    transition: transform 0.5s, background-color 0.5s ease;
+}
+
+#tool6 #notebookSubject {
+    display: none;
+}
+
+#tool6 #notebookSubject .header button#back {
+    right: 24px;
+    position: absolute;
+}
+
+#tool6 #notebookSubject .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#tool6 textarea {
+    color: var(--dark-color-text);
+    width: 253px;
+    height: 421px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    line-height: 1.3;
+    font-family: FANGSONG;
+}
+
+body.light-mode #tool6 textarea {
+    color: var(--light-color-text);
+    width: 253px;
+    height: 421px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    line-height: 1.3;
+    font-family: FANGSONG;
+}
+
+#tool6 .footer {
+    height: 27.4px;
+    border-top: 1.4px solid #FFF;
+    padding: 4px;
+    text-align: center;
+}
+
+#tool6 p#feedback {
+    margin: 5.97px 0 0 10px;
+    display: flex;
+    font-size: 11.65px;
+    font-weight: bold;
+    align-items: center;
+    font-family: Arial;
+    justify-content: flex-start;
+}
+
+#tool6 span {
+    margin-left: 5px;
+}
+
+#tool7 .header{
+    width: 292px;
+    height: 33.044px;
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    border-bottom: 1.4px solid #FFF;
+    justify-content: space-between;
+}
+
+#tool7 h1 {
+    margin: 1px 0 0 13px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.3px;
+}
+
+#tool7 button#minimize-iconNP {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#tool7 hr {
+    width: 9px;
+    border: var(--dark-hr-border);
+}
+
+body.light-mode #tool7 hr {
+    width: 9px;
+    border: var(--light-hr-border);
+}
+
+#tool7 textarea#subjectNotepad {
+    color: var(--dark-color-text);
+    width: 295px;
+    height: 149.46px;
+    resize: none;
+    margin: 1px 1px 4px 0;
+    padding: 3px 0 0 4px;
+    background-color: transparent;
+}
+
+body.light-mode #tool7 textarea#subjectNotepad {
+    color: var(--light-color-text);
+    width: 295px;
+    height: 149.46px;
+    resize: none;
+    margin: 1px 1px 4px 0;
+    padding: 3px 0 0 4px;
+    background-color: transparent;
+}
+
+#tool7 textarea#subjectNotepad:focus {
+    outline: none;
+}
+
+#tool7 ::-webkit-scrollbar {
+    width: 3.5px;
+    background-color: transparent;
+}
+
+#tool7 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--dark-color-text);
+}
+
+body.light-mode #tool7 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--light-color-text);
+}
+
+.rainbow-border {
+    right: 9px;
+    width: 54px;
+    height: 54px;
+    bottom: 9px;
+    position: absolute;
+    box-shadow: 0px 0px 6px 1px #CA00FA;
+    border-radius: 50%;
+    background-size: 100% 50%;
+    background-image: linear-gradient(180deg, #FF0000 10%, #F7421E 23%, #0050C0 27%, #00B010 90%, #FF0000 100%);
+    animation: rainbow-border 6s linear infinite;
+}
+
+@keyframes rainbow-border {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+button#perfil-icon {
+    right: 11px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    bottom: 11px;
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    background-image: url(../assets/Account.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+a#viewAccount {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+div#accountElement {
+    top: 53%;
+    left: 50%;
+    width: 400px;
+    height: 550px;
+    border: 1px solid #CCC;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    flex-direction: column;
+    background-color: var(--dark-background-color);
+}
+
+body.light-mode div#accountElement {
+    top: 53%;
+    left: 50%;
+    width: 400px;
+    height: 550px;
+    border: 1px solid #CCC;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    flex-direction: column;
+    background-color: var(--light-background-color);
+}
+
+#accountElement .header {
+    height: 33.044px;
+    padding: 4px;
+}
+
+button#minimize-iconAE {
+    right: 0;
+    width: 14px;
+    margin: 7px 14px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+}
+
+#accountElement form#formAccount {
+    flex: 1;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    justify-content: center;
+}
+
+#accountElement #formAccount h2 {
+    color: var(--dark-color-text);
+    inset: -73.5px 0 0 0;
+    height: fit-content;
+    margin: 0;
+    position: relative;
+    font-size: 17px;
+    text-align: center;
+    /* font-family: Feather; */
+    letter-spacing: 0.34px;
+}
+
+body.light-mode #accountElement #formAccount h2 {
+    color: var(--light-color-text);
+    inset: -73.5px 0 0 0;
+    height: fit-content;
+    margin: 0;
+    position: relative;
+    font-size: 17px;
+    text-align: center;
+    /* font-family: Feather; */
+    letter-spacing: 0.34px;
+}
+
+#accountElement #formAccount label {
+    margin: 25.1px 0 3.86px 6px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.22px;
+}
+
+body.light-mode #accountElement #formAccount label {
+    margin: 25.1px 0 3.86px 6px;
+    font-size: 11.5px;
+    font-weight: bold;
+    font-family: Arial;
+    letter-spacing: 0.22px;
+    text-shadow: none;
+}
+
+#accountElement #formAccount input#username {
+    margin: 0 0 -3px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#accountElement #formAccount input#username::placeholder {
+    color: #4C5053;
+    padding: 0 0 0 13px;
+    font-size: 9.9px;
+    font-weight: 500;
+    letter-spacing: 0.18px;
+}
+
+#accountElement #formAccount input#email {
+    margin: 0 0 -3px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#accountElement #formAccount input#email::placeholder {
+    color: #4C5053;
+    padding: 0 0 0 13px;
+    font-size: 9.9px;
+    font-weight: 500;
+    letter-spacing: 0.18px;
+}
+
+#accountElement #formAccount input#imgProfile {
+    margin: 0 0 28px 0;
+    border: 1.4px solid #515151;
+    height: 24px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+}
+
+#accountElement #formAccount input#imgProfile::placeholder {
+    color: #4C5053;
+    padding: 0 0 0 13px;
+    font-size: 9.9px;
+    font-weight: 500;
+    letter-spacing: 0.18px;
+}
+
+#accountElement #formAccount button#btnProfile {
+    inset: 2.35px 0 0 0;
+    position: relative;
+}
+
+#accountElement #formAccount button#btnProfile {
+    color: #4C5053;
+    height: 28.7px;
+    border: 1.4px solid #515151;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 7px;
+    letter-spacing: 0.3px;
+    background-color: #FFF;
+}
+
+#accountElement .footer {
+    width: 98%;
+    height: 26.814px;
+    border-top: 1.4px solid #FFF;
+    padding: 4px;
+    text-align: center;
+}
+
+#accountElement p#feedback {
+    margin: 5.97px 0 0 10px;
+    display: flex;
+    font-size: 11.65px;
+    font-weight: bold;
+    align-items: center;
+    font-family: Arial;
+    justify-content: flex-start;
+}
+
+#accountElement span {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    button#weatherButton {
+        display: none;
+    }
+    div#weatherTime {
+        position: absolute;
+        right: 196px;
+    }
+    p#weather{
+        top: 2px;
+        font-size: 18px;
+    }
+    .notif {
+        display: none;
+        right: 2px;
+        width: 77%;
+    }
+    .workspace {
+        top: 38px;
+        right: 0;
+        width: 84.7%;
+    }
+    .toolbar {
+        top: 43px;
+        left: 2.5px;
+        width: 6%;
+        border: 0;
+        bottom: 2.5px;
+        padding: 3px;
+        background: 0;
+    }
+    body.light-mode .toolbar {
+        top: 43px;
+        left: 2.5px;
+        width: 6%;
+        border: 0;
+        bottom: 2.5px;
+        padding: 3px;
+        background: 0;
+    }
+    .toolbar-item {
+        color: white;
+        border: 1px solid #FFF;
+        cursor: pointer;
+        padding: 25px;
+        border-radius: 7px;
+        background-color: var(--dark-background-color-toolbar-item);
+    }
+    body.light-mode .toolbar-item {
+        color: white;
+        border: 1px solid #FFF;
+        cursor: pointer;
+        padding: 25px;
+        border-radius: 7px;
+        background-color: var(--light-background-color-toolbar-item);
+    }
+    #youtube, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #notepad {
+        background-size: 33px;
+    }
+    #tool2 {
+        right: 1.6px;
+        z-index: 1;
+        box-sizing: border-box;
+        align-items: center;
+        border-radius: 15px;
+        pointer-events: none;
+        justify-content: center;
+        background-color: #000000eb;
+    }
+    div#accountElement {
+        top: 53%;
+        left: 50%;
+        width: 98%;
+        height: 580px;
+        border: 1px solid #CCC;
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        border-radius: 12px;
+        flex-direction: column;
+        background-color: #000000db;
+    }
+}
+
+@media screen and (max-height: 480px) {
+    .notif {
+        display: none;
+        right: 2px;
+        width: 77%;
+    }
+    .workspace {
+        top: 38.9px;
+        right: 0;
+        width: 92.38%;
+    }
+    .toolbar {
+        top: 43px;
+        left: 2.5px;
+        width: 6%;
+        bottom: 2.5px;
+        padding: 3px;
+    }
+    body.light-mode .toolbar {
+        top: 43px;
+        left: 2.5px;
+        width: 6%;
+        bottom: 2.5px;
+        padding: 3px;
+    }
+    .toolbar-item {
+        color: white;
+        border: 1px solid #FFF;
+        cursor: pointer;
+        padding: 21px;
+        border-radius: 7px;
+        background-color: var(--dark-background-color-toolbar-item);
+    }
+    body.light-mode .toolbar-item {
+        color: white;
+        border: 1px solid #FFF;
+        cursor: pointer;
+        padding: 21px;
+        border-radius: 7px;
+        background-color: var(--light-background-color-toolbar-item);
+    }
+    #youtube, #mindfulness, #calendar, #pomodoro, #spotify, #notebook, #notepad {
+        background-size: 32px;
+    }
+    div#accountElement {
+        top: 50%;
+        left: 50%;
+        width: 56%;
+        height: 96%;
+        border: 1px solid #CCC;
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 12px;
+        flex-direction: column;
+        background-color: #000000db;
+        align-items: center;
+    }
+    #accountElement form#formAccount {
+        flex: 1;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+    }
+    #accountElement #formAccount h2 {
+        color: #FFF;
+        inset: 0 0 0 0;
+        height: fit-content;
+        margin: 0;
+        position: relative;
+        font-size: 17px;
+        text-align: center;
+        /* font-family: Feather; */
+        letter-spacing: 0.34px;
+    }
+    #accountElement #formAccount label {
+        margin: 23px 0 0 6px;
+        font-size: 11.5px;
+        font-weight: bold;
+        font-family: Arial;
+        letter-spacing: 0.22px;
+    }
+    #accountElement #formAccount input#username {
+        margin: 0 0 -3px 0;
+        border: 1.4px solid #515151;
+        height: 24px;
+        border-radius: 7px;
+        background-color: #D9D9D9;
+    }
+    #accountElement #formAccount input#email {
+        margin: 0 0 -3px 0;
+        border: 1.4px solid #515151;
+        height: 24px;
+        border-radius: 7px;
+        background-color: #D9D9D9;
+    }
+    #accountElement #formAccount input#imgProfile {
+        margin: 0 0 -11px 0;
+        border: 1.4px solid #515151;
+        height: 24px;
+        border-radius: 7px;
+        background-color: #D9D9D9;
+    }
+    #accountElement #formAccount button#btnProfile {
+        inset: 0 0 0 0;
+        position: unset;
+    }
+    #accountElement #formAccount button#btnProfile {
+        padding: 0;
+        margin: 41px 0 0 0;
+        color: #4C5053;
+        height: 28.7px;
+        border: 1.4px solid #515151;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 7px;
+        letter-spacing: 0.3px;
+        background-color: #FFF;
+    }
+}

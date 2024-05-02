@@ -1,0 +1,588 @@
+body {
+    color: #FFF;
+    cursor: url(../assets/Cursor1.svg), auto;
+    display: flex;
+    overflow: hidden;
+    min-height: 100vh;
+    font-family: "Feather Bold";
+    /* font-family: "Feather";  */
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-image: url(../assets/login&register/Background\ -\ Register.svg);
+    background-position: center;
+}
+
+header {
+    text-align: center;
+    box-shadow: 0px 2px 15px #000;
+    background-color: #131E22;
+}
+
+header h1 {
+    margin: 4.7px 0;
+    font-size: 23px;
+    letter-spacing: 0.46px;
+}
+
+.rainbow-line {
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(90deg, #00B010, #00B010, #0EC6E8, #0050C0, #0050C0, #8C58A3, #8C58A3, #F7421E, #FF0000, #F7421E, #8C58A3, #8C58A3, #0050C0, #0050C0, #0EC6E8,#00B010, #00B010);
+    background-size: 50% 100%;
+    animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+form#form-register {
+    margin-right: 541px;
+}
+
+#form-register h2 {
+    margin: 36.5px 0 52px 0;
+    font-size: 24.1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);
+    letter-spacing: 0.482px;
+}
+
+label {
+    margin: 0 0 0 15px;
+    font-size: 16.7px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);
+}
+
+input {
+    border: 1px solid #E7E6E6;
+    padding: 0 0 0 23px;
+    box-sizing: border-box;
+    background: #42BDD4;
+    box-shadow: 3px 5px 9px 0 rgba(0, 0, 0, 0.45);
+    border-radius: 18px;
+}
+
+input::placeholder {
+    color: #404040;
+    font-size: 14.7px;
+    font-family: Georgia;
+}
+
+input[type="text"], input[type="email"] {
+    width: 581px;
+    height: 36px;
+    margin-bottom: 8px;
+}
+
+input[type="password"] {
+    width: 263px;
+    height: 32px;
+    background-color: #FF668B;
+}
+
+br#space {
+    display: none;
+}
+
+label#labelconfpw {
+    top: -25px;
+    left: 9px;
+    position: relative;
+}
+
+input#confpassword {
+    margin: 0 0 0 276px;
+    top: -32px;
+    position: relative;
+}
+
+#btn-register-pocket {
+    display: none;
+    margin: 10.6px 0 0 0;
+    width: 269px;
+    height: 43px;
+    background: linear-gradient(0deg, #F9CF7D 0%, #A21F5B 20.31%, #621B5A 91.67%);
+    box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    font-family: "Feather Bold";
+    /* font-family: "Feather";  */
+    text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
+}
+
+#index-link-pocket {
+    display: none;
+    color: #FFF;
+    margin: 4px 0 0 0;
+    font-size: 12.9px;
+    text-decoration: none;
+}
+
+#object-1, #object-3, #object-5 {
+    position: absolute;
+    animation: rotate-horario 25s linear infinite;
+}
+
+#object-2, #object-4 {
+    position: absolute;
+    animation: rotate-antihorario 25s linear infinite;
+}
+
+#object-1 {
+    inset: 327px 0 0 1183.9px;
+}
+
+#object-2 {
+    inset: 318px 0 0 1177.1px;
+}
+
+#object-3 {
+    inset: 51.3px 0 0 738.3px;
+}
+
+#object-4 {
+    inset: 208.3px 0 0 820.3px;
+}
+
+#object-5 {
+    inset: 229.7px 0 0 738.3px;
+}
+
+@keyframes rotate-horario {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-antihorario {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.or-container {
+    margin: 35px 881px 0 0;
+    display: inline-flex;
+}
+
+.left-line {
+    width: 101.8px;
+    height: 2px;
+    margin: 0 0 0 144px;
+    background-color: #FFF;
+}
+
+#or {
+    padding: 0 15px;
+    font-size: 13.4px;
+    margin: -8.4px 0 0 0px;
+}
+
+.right-line {
+    width: 101.8px;
+    height: 2px;
+    background-color: #FFF;
+}
+
+.digitalmedia-container {
+    margin: 62px 745px 0 0;
+}
+
+#google, #facebook, #twitter {
+    width: 122px;
+    margin: 0;
+    border: 2px solid #7F7F7F;;
+    height: 39px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+#google {
+    background: #9DC3E6;
+    background-image: url(../assets/login&register/Google-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#facebook {
+    margin: 0 0 0 5px;
+    background: #FFFFB3;
+    background-image: url(../assets/login&register/Facebook-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#twitter {
+    margin: 0 0 0 5px;
+    background: #FFA5BB;
+    background-image: url(../assets/login&register/Twitter-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rectangle-container {
+    width: 345px;
+    height: 458px;
+    margin: -451.3px 0 0 798px;
+    border: 0.1px solid rgba(38, 37, 60, 0.65);
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    flex-direction: column;
+    background-color: rgba(13, 13, 13, 0.55);
+}
+
+#img-slogan {
+    margin: 21.5px 0 9px 3px;
+}
+
+#btn-register {
+    margin: 10.6px 0 0 0;
+    width: 269px;
+    height: 43px;
+    background: linear-gradient(0deg, #F9CF7D 0%, #A21F5B 20.31%, #621B5A 91.67%);
+    box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    font-family: "Feather Bold";
+    /* font-family: "Feather";  */
+    text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
+}
+
+#index-link {
+    color: #FFF;
+    margin: 4px 0 0 0;
+    font-size: 12.9px;
+    text-decoration: none;
+}
+
+.paragrapho {
+    color: #E7E6E6;
+    margin: 31.9px 0 0 0;
+    font-size: 10px;
+    text-align: center;
+}
+
+#term-privacy1, #term-privacy2 {
+    width: 325px;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+}
+
+#term-privacy2 {
+    margin: 11.1px 0 0 0;
+}
+
+span {
+    text-decoration: underline;
+    color: #0563C1;
+}
+
+footer {
+    background-color: #131E22;
+}
+
+footer #copyright {
+    margin: 1.8px;
+    font-size: 15px;
+    text-align: center;
+    font-family: Calibri;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        color: #FFF;
+        cursor: url(../assets/Cursor1.svg), auto;
+        display: flex;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: 100vh;
+        min-width: 100vw;
+        font-family: "Feather Bold";
+        /* font-family: "Feather";  */
+        flex-direction: column;
+        background-size: cover;
+        margin: 0 auto;
+        background-image: url(../assets/login&register/Background\ -\ Index.svg);
+        background-position: center;
+        justify-content: space-between;
+    }
+
+    header {
+        display: block;
+        text-align: center;
+        box-shadow: 0px 2px 15px #000;
+        background-color: #131E22;
+    }
+
+    header h1 {
+        margin: 4.7px 0;
+        font-size: 23px;
+        letter-spacing: 0.6px;
+    }
+
+    .rainbow-line {
+        width: 100%;
+        height: 1.6px;
+        background-image: linear-gradient(90deg, #00B010, #00B010, #0EC6E8, #0050C0, #0050C0, #8C58A3, #8C58A3, #F7421E, #FF0000, #F7421E, #8C58A3, #8C58A3, #0050C0, #0050C0, #0EC6E8,#00B010, #00B010);
+        background-size: 50% 100%;
+        animation: rainbow 5s linear infinite;
+    }
+    
+    @keyframes rainbow {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 100% 0;
+        }
+    }
+    
+    main {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    form#form-register {
+        width: 90%;
+        margin: 22.9px 0 2px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    #form-register h2 {
+        width: fit-content;
+        margin: 0 0 35px 0;
+        font-size: 24.1px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);
+        letter-spacing: 0.482px;
+    }
+    
+    label {
+        margin: 0;
+        font-size: 16.7px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.77);
+    }
+    
+    input {
+        border: 1px solid #E7E6E6;
+        padding: 0 15px 0 23px;
+        box-sizing: border-box;
+        background: #ff698d;
+        box-shadow: 3px 5px 9px 0px rgba(0, 0, 0, 0.45);
+        border-radius: 18px;
+    }
+
+    input::placeholder {
+        color: #404040;
+        font-size: 14.7px;
+        font-family: Georgia;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 100%;
+        height: 36px;
+    }
+
+    br#space {
+        display: block;
+    }
+
+    label#labelconfpw {
+        position: unset;
+    }
+
+    input#confpassword {
+        margin: 0;
+        position: unset;
+    }
+
+    #btn-register-pocket {
+        display: block;
+        width: 95%;
+        margin: 10.6px 0 0 0;
+        height: 43px;
+        background: linear-gradient(0deg, #F9CF7D 0%, #A21F5B 20.31%, #621B5A 91.67%);
+        box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
+        border-radius: 12px;
+        font-family: "Feather Bold";
+        /* font-family: "Feather";  */
+        text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
+    }
+
+    #index-link-pocket {
+        display: block;
+        color: #FFF;
+        margin: 0;
+        font-size: 13.9px;
+        text-decoration: none;
+    }
+
+    #object-1 {
+        display: none;
+    }
+
+    #object-2 {
+        inset: 352px 0 0 -15px;
+    }
+
+    #object-3 {
+        display: none;
+        inset: 0.3px 0 0 340px;
+    }
+
+    #object-4 {
+        inset: 43px 0 0 393px;
+    }
+
+    #object-5 {
+        inset: 552.3px 0 0 -46px;
+    }
+
+    #object-1, #object-3, #object-5 {
+        position: absolute;
+        animation: girar-sentido-horario 25s linear infinite;
+    }
+
+    @keyframes girar-sentido-horario {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes girar-sentido-antihorario {
+        0% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .or-container{
+        margin: 49px 0 0 0;
+        display: inline-flex;
+    }
+
+    .left-line {
+        width: 101.8px;
+        height: 2px;
+        margin: 0;
+        background-color: #FFF;
+    }
+
+    #or {
+        font-size: 13.4px;
+        padding: 0 15px;
+        margin: -8.4px 0 0 0;
+    }
+
+    .right-line {
+        width: 101.8px;
+        height: 2px;
+        margin: 0;
+        background-color: #FFF;
+    }
+    
+    .digitalmedia-container{
+        margin: 56px 0 24px 0;
+        display: inline-flex;
+    }
+    
+    #google, #facebook, #twitter {
+        width: 114px;
+        margin: 0;
+        border: 2px solid #7F7F7F;
+        height: 39px;
+        box-sizing: border-box;
+        border-radius: 15px;
+    }
+    
+    #google {
+        background: #9DC3E6;
+        background-image: url(../assets/login&register/Google-icon.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    #facebook {
+        margin: 0 0 0 5px;
+        background: #FFFFB3;
+        background-image: url(../assets/login&register/Facebook-icon.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    #twitter {
+        margin: 0 0 0 5px;
+        background: #FFA5BB;
+        background-image: url(../assets/login&register/Twitter-icon.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .rectangle-container {
+        display: none;
+    }
+    
+    #img-slogan {
+        margin: 21.5px 0 9px 3px;
+    }
+    
+    .paragrapho {
+        color: #E7E6E6;
+        margin: 31.9px 0 0 0;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    #term-privacy1, #term-privacy2 {
+        width: 325px;
+        line-height: 12px;
+        letter-spacing: 0.02em;
+    }
+    
+    #term-privacy2 {
+        margin: 11.1px 0 0 0;
+    }
+    
+    span {
+        text-decoration: underline;
+        color: #0563C1;
+    }
+    
+    footer {
+        background-color: #131E22;
+    }
+    
+    footer #copyright {
+        margin: 1.8px;
+        font-size: 15px;
+        text-align: center;
+        font-family: Calibri;
+    }
+}

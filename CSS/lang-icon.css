@@ -1,0 +1,70 @@
+#language-options {
+    right: 29.8px;
+    position: absolute;
+}
+#langBack:hover {
+    transform: scale(1.1);
+}
+#langBack {
+    background-color: #131e22;
+    background-size: 19px;
+    background-image: url(../assets/header-main/Lang-back.png);
+    transition: transform 0.3s;
+}
+body.light-mode #langBack {
+    background-color: var(--light-ferramentabar);
+    background-size: 19px;
+    background-image: url(../assets/header-main/Lang-back.png);
+    transition: transform 0.3s;
+}
+#pt:hover {
+    transform: scale(1.1);
+}
+#pt {
+    background-color: #131e22;
+    margin-top: 27px;
+    background-size: 21.5px;
+    background-image: url(../assets/header-main/BR-icon.png);
+    transition: transform 0.3s;
+}
+body.light-mode #pt {
+    background-color: var(--light-ferramentabar);
+    margin-top: 27px;
+    background-size: 21.5px;
+    background-image: url(../assets/header-main/BR-icon.png);
+    transition: transform 0.3s;
+}
+#en:hover {
+    transform: scale(1.1);
+}
+#en {
+    background-color: #131e22;
+    margin-top: 54px;
+    background-size: 21.5px;
+    background-image: url(../assets/header-main/USA-icon.png);
+    transition: transform 0.3s;
+}
+body.light-mode #en {
+    background-color: var(--light-ferramentabar);
+    margin-top: 54px;
+    background-size: 21.5px;
+    background-image: url(../assets/header-main/USA-icon.png);
+    transition: transform 0.3s;
+}
+#es:hover {
+    transform: scale(1.1);
+}
+#es {
+    background-color: #131e22;
+    margin-top: 81px;
+    background-size: 21.5px;
+    background-image: url(../assets/header-main/ES-icon.png);
+    transition: transform 0.3s;
+}
+body.light-mode #es {
+    background-color: var(--light-ferramentabar);
+    margin-top: 81px;
+    background-size: 21.5px;
+    background-image: url(../assets/header-main/ES-icon.png);
+    transition: transform 0.3s;
+}
