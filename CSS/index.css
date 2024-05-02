@@ -3,8 +3,7 @@ body {
     cursor: url(../assets/Cursor1.svg), auto;
     display: flex;
     min-height: 100vh;
-    font-family: "Feather Bold";
-    /* font-family: "Feather";  */
+    font-family: "Feather Bold", "Feather";
     flex-direction: column;
     justify-content: space-between;
     background-size: cover;
@@ -98,8 +97,7 @@ input[type="password"] {
     background: linear-gradient(0deg, #F9CF7D 0%, #A21F5B 20.31%, #621B5A 91.67%);
     box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
     border-radius: 12px;
-    font-family: "Feather Bold";
-    /* font-family: "Feather";  */
+    font-family: "Feather Bold", "Feather";
     text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
 }
 
@@ -272,8 +270,7 @@ footer #copyright {
         cursor: url(../assets/Cursor1.svg), auto;
         display: flex;
         min-height: 100vh;
-        font-family: "Feather Bold";
-        /* font-family: "Feather";  */
+        font-family: "Feather Bold", "Feather";
         flex-direction: column;
         background-size: cover;
         margin: 0 auto;
@@ -373,8 +370,7 @@ footer #copyright {
         background: linear-gradient(0deg, #F9CF7D 0%, #A21F5B 20.31%, #621B5A 91.67%);
         box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.75);
         border-radius: 12px;
-        font-family: "Feather Bold";
-        /* font-family: "Feather";  */
+        font-family: "Feather Bold", "Feather";
         text-shadow: 0.6000000238418579px 0.8999999761581421px 1.100000023841858px rgba(0, 0, 0, 0.47);
     }
     

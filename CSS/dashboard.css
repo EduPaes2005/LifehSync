@@ -28,8 +28,7 @@ body {
     color: var(--dark-color-text);
     cursor: url(../assets/Cursor1.svg), auto;
     overflow: hidden;
-    font-family: "Feather Bold";
-    /* font-family: "Feather"; */
+    font-family: "Feather Bold", "Feather";
     transition: background-color 0.5s, color 0.5s;
     /* background-size: cover;
     background-image: url(../assets/login&register/Background\ -\ Register.svg); -- Ative quando não houver internet*/
@@ -39,8 +38,7 @@ body.light-mode {
     color: var(--light-color-text);
     cursor: url(../assets/Cursor1.svg), auto;
     overflow: hidden;
-    font-family: "Feather Bold";
-    /* font-family: "Feather"; */
+    font-family: "Feather Bold", "Feather";
 }
 
 .background-video {
@@ -356,8 +354,7 @@ body.light-mode .notif {
 .welcome_text {
     font-size: 18px;
     font-weight: bold;
-    font-family: Feather Bold;
-    /* font-family: Feather; */
+    font-family: Feather Bold, Feather;
 }
 
 .loader {
@@ -525,13 +522,10 @@ body.light-mode .toolbar-item {
 }
 
 body.light-mode #youtube.active-button {
-    border: 2px solid #FFF;
-    transform: scale(1.15);
-    transition: transform 0.5s, background-color 0.5s ease;
     background-color: var(--light-background-color-toolbar-active);
 }
 
-body.light-mode #minfulness.active-button {
+body.light-mode #mindfulness.active-button {
     background-color: var(--light-background-color-toolbar-active);
 }
 
@@ -724,8 +718,7 @@ body.light-mode #tool1 button#btnYoutube {
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    font-family: "Feather Bold";
-    font-family: "Feather";
+    font-family: "Feather Bold", "Feather";
     color: #ffffff;
     transition: all 4s ease-in-out;
 }
@@ -864,8 +857,7 @@ body.light-mode #tool5 hr {
 }
 
 #tool5 button {
-    font-family: Feather Bold;
-    /* font-family: Feather; */
+    font-family: Feather Bold, Feather;
     background-color: transparent;
 }
 
@@ -1092,8 +1084,7 @@ body.light-mode #tool6 ::-webkit-scrollbar-thumb {
     position: relative;
     font-size: 17px;
     text-align: center;
-    font-family: Feather Bold;
-    /* font-family: Feather; */
+    font-family: Feather Bold, Feather;
     letter-spacing: 0.34px;
 }
 
@@ -1105,8 +1096,7 @@ body.light-mode #tool6 h2 {
     position: relative;
     font-size: 17px;
     text-align: center;
-    font-family: Feather Bold;
-    /* font-family: Feather; */
+    font-family: Feather Bold, Feather;
     letter-spacing: 0.34px;
 }
 
@@ -1316,8 +1306,8 @@ body.light-mode #tool6 #Notebook .linkNotebooks {
     color: white;
     font-size: larger;
     text-align: center;
-    font-family: 'Feather';
-    -webkit-text-stroke-width: thick;
+    font-family: Feather Bold, Feather;
+    -webkit-text-stroke-width: medium;
     -webkit-text-stroke-color: black;
     text-shadow: -0.5px 0px 10px black;
 }
@@ -1660,7 +1650,6 @@ button#minimize-iconAE {
     position: relative;
     font-size: 17px;
     text-align: center;
-    /* font-family: Feather; */
     letter-spacing: 0.34px;
 }
 
@@ -1672,7 +1661,6 @@ body.light-mode #accountElement #formAccount h2 {
     position: relative;
     font-size: 17px;
     text-align: center;
-    /* font-family: Feather; */
     letter-spacing: 0.34px;
 }
 
@@ -1799,7 +1787,7 @@ body.light-mode #accountElement #formAccount label {
     .workspace {
         top: 38px;
         right: 0;
-        width: 84.7%;
+        width: 84.1%;
     }
     .toolbar {
         top: 43px;
@@ -1847,6 +1835,9 @@ body.light-mode #accountElement #formAccount label {
         pointer-events: none;
         justify-content: center;
         background-color: #000000eb;
+    }
+    .titleCover {
+        -webkit-text-stroke-width: thin;
     }
     div#accountElement {
         top: 53%;
@@ -1940,7 +1931,6 @@ body.light-mode #accountElement #formAccount label {
         position: relative;
         font-size: 17px;
         text-align: center;
-        /* font-family: Feather; */
         letter-spacing: 0.34px;
     }
     #accountElement #formAccount label {
